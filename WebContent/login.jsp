@@ -5,16 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="login.css">
 <title>登陆页面</title>
 </head>
 <body>
-	<form action="LoginServlet"  method="post"  style="padding-top:-700px;">
-		用户名： 	<input type="text" name="Nickname"value=""><br><br>
- 		密码：     	<input type="password" name="Password"value=""><br><br>
-	         	<input type="submit" value="登录" name="denglu"><input type="reset" value="重置"><br>
+<div class="top"> 
+	<div class="top-title">.o Gobang o.</div>
+	<div class="top-subtitle">来与ai对战吧！</div>
+	<form class="form1" action="LoginServlet"  method="post" >
+		用户： 	<input class="form-control" type="text" name="Nickname"><br><br>
+ 		密码：     	<input class="form-control" type="password" name="Password"><br><br>
+ 				<div class="reg_suc">${message}</div>
+	         	<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
 	</form>
-	<form action="register.jsp">
-	 	<input type="submit" value="新用户注册">
-    </form>
+	<div class="top-bottom">
+ 		<span>还没有账号？</span><a href="register.jsp" class="" onclick="this.form.submit()"> 注册</a>
+ 	</div>
+</div>
 </body>
 </html>

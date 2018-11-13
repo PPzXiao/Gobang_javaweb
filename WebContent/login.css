@@ -1,0 +1,50 @@
+@charset "UTF-8";
+body{
+	background:url(./zhuzi1.jpg) no-repeat fixed;
+	background-size:100% 100%;
+	
+}
+.top{
+	background:#ffffff;
+	width: 432px;
+    margin: 0 auto;
+	text-align: center;
+	min-height: 440px;
+	border-radius: 3%;
+	margin-top:50px; 
+	opacity:0.95;
+} 
+.top2{
+	min-height: 500px;
+}
+.top-title{
+	text-align: center;
+	font-size: 40px;
+	padding-top:50px;
+	margin-bottom: 10px;
+	font-family: "STHupo";
+}
+.top-subtitle{
+	font-family: "STHupo";
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.form1{
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align:center;
+}
+.form-control{
+	display:inline-block;
+	width:60%;
+}
+.login{
+	margin-top:20px;
+	width:75%;
+} 
+.top-bottom{
+	margin-top:10px; 
+	padding-top:15px;
+	padding-bottom:5px;
+}

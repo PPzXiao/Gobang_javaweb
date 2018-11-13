@@ -2,6 +2,7 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.swing.JOptionPane;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,20 +35,21 @@ public class RegisterServlet extends HttpServlet {
 //		System.out.println(df.format(new Date()));
 		String date = df.format(new Date());
 		String email = request.getParameter("Email");
-		
 		User user = new User(); //实例化一个对象，组装属性
 		user.setName(name);
 		user.setPwd(pwd);
 		user.setDate(date);
-		user.setEmail(email);		
+		user.setEmail(email);
+		System.out.println(user.getName().equals(""));
 		UserDao ud = new UserDaoImpl();
-		
 		if(ud.register(user)){
 			request.setAttribute("NickName", name);  //向request域中放置参数
-			request.setAttribute("message", "注册成功");
+			JOptionPane.showMessageDialog(null, "注册成功");; 
+//			request.setAttribute("message", "注册成功");
 			request.getRequestDispatcher("/login.jsp").forward(request, response);  //转发到登录页面
 		}else{
-			response.sendRedirect("index.jsp");//重定向到首页
+			JOptionPane.showMessageDialog(null, "注册失败"); 
+			response.sendRedirect("register.jsp");//重定向到首页
 		}
 	}
 }

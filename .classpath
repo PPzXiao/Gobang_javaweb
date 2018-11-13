@@ -14,5 +14,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/mysql-8.0.11-winx64/mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lenovo/Desktop/数据库原理/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lenovo/Desktop/数据库原理/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

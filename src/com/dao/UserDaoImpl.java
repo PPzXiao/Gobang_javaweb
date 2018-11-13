@@ -14,10 +14,12 @@ public class UserDaoImpl implements UserDao{
 	public boolean register(User user) {
 		boolean flag = false;
 		DBconn.init();
+		if(!(user.getName().equals("")||user.getPwd().equals("")||user.getEmail().equals(""))){
 		int i =DBconn.addUpdDel("insert into user(Nickname,Password,RegisterDate,Email) " +
 				"values('"+user.getName()+"','"+user.getPwd()+"','"+user.getDate()+"','"+user.getEmail()+"')");
 		if(i>0){
 			flag = true;
+		}
 		}
 		DBconn.closeConn();
 		return flag;
