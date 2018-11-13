@@ -28,7 +28,7 @@ public class DeleteServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		String i = request.getParameter("UserID");
 		int ID = Integer.parseInt(i);
-
+		System.out.println(ID);
 		if(ud.delete(ID)){
 			request.setAttribute("message", "É¾³ý³É¹¦");
 			request.getRequestDispatcher("/Searchall").forward(request, response);

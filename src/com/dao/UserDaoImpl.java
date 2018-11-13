@@ -66,9 +66,9 @@ public class UserDaoImpl implements UserDao{
 		DBconn.init();
 		String sql ="update user set Nickname ='"+Nickname
 				+"' , Password ='"+Password
-				+"' , RigisterDate ='"+RegisterDate
+				+"' , RegisterDate ='"+RegisterDate
 				+"' , Email ='"+Email
-				+"' where id = "+UserID;
+				+"' where UserID = "+UserID;
 		int i =DBconn.addUpdDel(sql);
 		if(i>0){
 			flag = true;
@@ -79,7 +79,7 @@ public class UserDaoImpl implements UserDao{
 	public boolean delete(int UserID) {
 		boolean flag = false;
 		DBconn.init();
-		String sql = "delete  from user where id="+UserID;
+		String sql = "delete from user where UserID="+UserID;
 		int i =DBconn.addUpdDel(sql);
 		if(i>0){
 			flag = true;
