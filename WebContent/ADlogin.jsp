@@ -6,22 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="login.css">
-<title>登陆页面</title>
+<title>管理员登陆</title>
 </head>
 <body>
 <div class="top"> 
-	<div class="top-title">.o Gobang o.</div>
+	<div class="top-title">.o Gobang o.</div> 
 	<div class="top-subtitle">来与ai对战吧！</div>
-	<form class="form1" action="LoginServlet"  method="post" >
-		用户： 	<input class="form-control" type="text" name="Nickname"><br><br>
- 		密码：     	<input class="form-control" type="password" name="Password"><br><br>
- 				<div class="reg_suc">${message}</div>
-	         	<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
+	<form class="form1" action="ADloginServlet"  method="post" >
+		管理员用户： 	<input class="form-control" type="text" name="ADname"><br><br>
+ 		管理员密码：     	<input class="form-control" type="password" name="ADpassword"><br><br>
+	         		<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
 	</form>
-	<div class="top-bottom">
- 		<span>还没有账号？</span><a href="register.jsp" class="" onclick="this.form.submit()"> 注册</a>
- 	</div>
- 	<a href="ADlogin.jsp">
+ 	<a href="login.jsp">
  	<img class="admin" alt="" src="./pika.png">
  	</a>
 </div>

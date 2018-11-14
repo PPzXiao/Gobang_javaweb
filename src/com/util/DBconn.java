@@ -3,7 +3,7 @@ package com.util;
 import java.sql.*;
 
 public class DBconn {
-	static String url = "jdbc:mysql://localhost:3306/gobang?useunicuee=true&serverTimezone=GMT&characterEncoding=utf8"; 
+	static String url = "jdbc:mysql://localhost:3306/gobang?useunicuee=true&serverTimezone=GMT&characterEncoding=utf8&&useSSL=false"; 
 	static String username = "root"; 
 	static String password = "123456"; 
 	static Connection  conn = null;
