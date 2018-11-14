@@ -48,3 +48,10 @@ body{
 	padding-top:15px;
 	padding-bottom:5px;
 }
+.admin{
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	height:40px;
+	width:40px;
+}

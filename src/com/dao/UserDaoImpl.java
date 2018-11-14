@@ -29,7 +29,9 @@ public class UserDaoImpl implements UserDao{
 		try {
 			    DBconn.init();
 				ResultSet rs = DBconn.selectSql("select * from user where Nickname='"+Nickname+"' and Password='"+Password+"'");
+				System.out.println(rs);
 				while(rs.next()){
+					System.out.println(111);
 					if(rs.getString("Nickname").equals(Nickname) && rs.getString("Password").equals(Password)){
 						flag = true;
 					}

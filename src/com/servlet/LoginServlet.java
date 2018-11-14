@@ -25,7 +25,6 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String name = request.getParameter("Nickname"); //得到jsp页面传过来的参数
 		String pwd = request.getParameter("Password");
 		
@@ -33,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if(ud.login(name, pwd)){
 			request.setAttribute("message", "欢迎用户"+name); //向request域中放置信息
+			request.setAttribute("grant", 0);
 			request.getRequestDispatcher("/success.jsp").forward(request, response);//转发到成功页面
 		}else{
 			response.sendRedirect("login.jsp"); //重定向到首页
