@@ -14,13 +14,14 @@
 	<div class="top-subtitle">来与ai对战吧！</div>
 	<form class="form1" action="LoginServlet"  method="post" >
 		<input class="form-control" type="text" autocomplete="off" name="Nickname" placeholder="用户名"><br><br>
-		        <p class="tip">请输入合法的邮箱地址</p>
- 		密码：     	<input class="form-control" type="password" name="Password"><br><br>
+		        <p class="tip">请输入用户名</p>
+ 		<input class="form-control" type="password" autocomplete="off" name="Password" placeholder="密码" ><br><br>
+ 		        <p class="tip">请输入密码</p>
  				<div class="reg_suc">${message}</div>
-	         	<button type="button"  class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
+	         	<button type="button"  class="btn btn-primary login"  onclick="this.form.submit()">登陆</button>
 	</form>
 	<div class="top-bottom">
- 		<span>还没有账号？</span><a href="register.jsp" class="" onclick="this.form.submit()"> 注册</a>
+ 		<span>还没有账号？</span><a href="register.jsp" class="" onclick="this.form.submit()" > 注册</a>
  	</div>
  	<a href="ADlogin.jsp">
  	<img class="admin" alt="" src="./pika.png">
@@ -30,7 +31,7 @@
     <script>
         $(function () {
             $('input').val('')
-            $('.login').on('click', function () {
+            $('#submit').on('click', function () {
                 $('.tip').show()
             })
         })
