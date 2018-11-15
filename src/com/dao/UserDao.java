@@ -10,4 +10,6 @@ public interface UserDao {
 	public List<User> getUserAll();//返回用户信息集合
 	public boolean delete(int UserID) ;//根据id删除用户
 	public boolean update(int UserID,String Nickname, String Password,String RigisterDate, String Email) ;//更新用户信息
+	public boolean question(User user);
+	public List<User> getQuestionAll();
 }

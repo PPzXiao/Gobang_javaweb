@@ -1,11 +1,40 @@
 package com.entity;
 
 public class User {
-    private int UserID;
+   
+	private int UserID;
     private String Nickname;
     private String Password;
     private String RigisterDate;
     private String Email;
+    public String Question;
+    public String Text;
+    public String Date;
+    public void setQuestion (String Question) {
+		this.Question = Question;
+    }
+    
+    public String getQuestion(){
+    	return Question;
+    }
+    
+    public void setText (String Text) {
+ 		this.Text = Text;
+     }
+     
+     public String getText(){
+     	return Text;
+     }
+    
+     public String getDate2() {
+ 		return Date;
+ 	}
+ 	public void setDate2(String Date) {
+ 		this.Date = Date;
+ 	}
+     
+     
+     
 	public int getID() {
 		return UserID;
 	}

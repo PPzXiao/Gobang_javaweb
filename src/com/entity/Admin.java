@@ -4,7 +4,7 @@ public class Admin {
     private int ADID;
     private String ADname;
     private String ADpassword;
-    private String ADrigisterdate;
+//    private String ADrigisterdate;
     private String ADemail;
 	public int getID() {
 		return ADID;
@@ -24,12 +24,12 @@ public class Admin {
 	public void setPwd(String ADpassword) {
 		this.ADpassword = ADpassword;
 	}
-	public String getDate() {
-		return ADrigisterdate;
-	}
-	public void setDate(String ADrigisterdate) {
-		this.ADrigisterdate = ADrigisterdate;
-	}
+//	public String getDate() {
+//		return ADrigisterdate;
+//	}
+//	public void setDate(String ADrigisterdate) {
+//		this.ADrigisterdate = ADrigisterdate;
+//	}
 	public String getEmail() {
 		return ADemail;
 	}

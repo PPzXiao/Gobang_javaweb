@@ -15,5 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<c:if test="${grant==1}"> 
 			<a href="Searchall">查看所有用户</a>
 		</c:if>
+		<a href="SearchallQ">查看所有问题</a>
+		<a href="Question.jsp">留言</a>
   </body>
 </html>

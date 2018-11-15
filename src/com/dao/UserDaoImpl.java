@@ -89,6 +89,41 @@ public class UserDaoImpl implements UserDao{
 		DBconn.closeConn();
 		return flag;
 	}
+	
+	public boolean question(User user) {
+		boolean flag = false;
+		DBconn.init();
+		if(!(user.getQuestion().equals("")||user.getText().equals(""))){
+		int i =DBconn.addUpdDel("insert into messege(Question,Text,Date) " +
+				"values('"+user.getQuestion()+"','"+user.getText()+"','"+user.getDate2()+"')");
+		if(i>0){
+			flag = true;
+		}
+		}
+		DBconn.closeConn();
+		return flag;
+	}
+	
+	public List<User> getQuestionAll() {
+			List<User> list = new ArrayList<User>();
+	    	try {
+			    DBconn.init();
+				ResultSet rs = DBconn.selectSql("select * from messege");
+				while(rs.next()){
+					User user = new User();
+					//user.setID(rs.getInt("UserID"));
+					user.setQuestion(rs.getString("Question"));
+					user.setText(rs.getString("Text"));
+					user.setDate2(rs.getString("Date"));
+					list.add(user);
+				}
+				DBconn.closeConn();
+				return list;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		return null;
+	}
     
 }
 
