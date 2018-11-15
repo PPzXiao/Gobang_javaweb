@@ -16,7 +16,7 @@
 		用户： 	<input class="form-control" type="text" name="Nickname"><br><br>
  		密码：     	<input class="form-control" type="password" name="Password"><br><br>
  				<div class="reg_suc">${message}</div>
-	         	<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
+	         	<button type="button"  class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
 	</form>
 	<div class="top-bottom">
  		<span>还没有账号？</span><a href="register.jsp" class="" onclick="this.form.submit()"> 注册</a>

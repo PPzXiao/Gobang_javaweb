@@ -10,9 +10,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <title>登陆成功</title>
   </head>
-  <body>
+  <body> 
 	<span>${message} ${grant}<br></span>
-		<c:if test="${grant==1}">
+		<c:if test="${grant==1}"> 
 			<a href="Searchall">查看所有用户</a>
 		</c:if>
   </body>
