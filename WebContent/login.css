@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body{
-	background:url(./miku.jpg) no-repeat fixed;
+	background:url(./zhuzi1.jpg) no-repeat fixed;
 	background-size:100% 100%;
 	
 }
@@ -55,3 +55,22 @@ body{
 	height:40px;
 	width:40px;
 }
+.tip { display: none; 
+   	position: absolute; 
+   	left: 20px; 
+   	top: 52px; 
+   	font-size: 14px; 
+   	color: #f50; 
+   	}
+   	
+   	<script src="./jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('input').val('')
+            $('.login').on('click', function () {
+                $('.tip').show()
+            })
+        })
+    </script>
+   	
+   	
