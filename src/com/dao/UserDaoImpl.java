@@ -24,8 +24,9 @@ public class UserDaoImpl implements UserDao{
 		DBconn.closeConn();
 		return flag;
 	}
-    public boolean login(String Nickname, String Password) {
-		boolean flag = false;
+    public User login(String Nickname, String Password) {
+//		boolean flag = false;
+		User user = new User();
 		try {
 			    DBconn.init();
 				ResultSet rs = DBconn.selectSql("select * from user where Nickname='"+Nickname+"' and Password='"+Password+"'");
@@ -33,14 +34,20 @@ public class UserDaoImpl implements UserDao{
 				while(rs.next()){
 					System.out.println(111);
 					if(rs.getString("Nickname").equals(Nickname) && rs.getString("Password").equals(Password)){
-						flag = true;
+//						flag = true;
+						user.setID(rs.getInt("UserID"));
+						user.setName(rs.getString("Nickname"));
+						user.setPwd(rs.getString("Password"));
+						user.setDate(rs.getString("RegisterDate"));
+						user.setEmail(rs.getString("Email"));
 					}
+					else {user=null;}
 				}
-				DBconn.closeConn();
+				DBconn.closeConn(); 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return flag;
+		return user;
 	}
 	public List<User> getUserAll() {
 		List<User> list = new ArrayList<User>();
@@ -88,6 +95,10 @@ public class UserDaoImpl implements UserDao{
 		}
 		DBconn.closeConn();
 		return flag;
+	}
+	public User getUser() {
+		// TODO 自动生成的方法存根
+		return null;
 	}
     
 }
