@@ -22,7 +22,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <body>
     
   
-  
+  <div class="container">
+	<div class="row clearfix">
+		<div class="col-xs-12 column">
   <h1>${message}</h1>
   <table class="table" >
   	<thead>
@@ -48,5 +50,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form>
     </c:forEach>  
     </table>
+    </div>
+       </div>
+          </div>
   </body>
 </html>
