@@ -10,7 +10,7 @@
 
 <body>
 <form action="QuestionServlet" method="post">
-<%@page contentType="text/html; charset=gb2312" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <div class="smart-green"> 
 <h1>留言</h1>
 <br>
