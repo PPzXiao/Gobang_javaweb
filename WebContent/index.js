@@ -5,7 +5,7 @@
 var chess = document.getElementById('chess');
 
 var context = chess.getContext('2d');
-
+var time2 = '';
 var me = true;
 var result=[
 	{
@@ -183,7 +183,8 @@ chess.onclick = function (e) {
 				myWin[k]++;
 				computerWin[k] = 6;
 				if (myWin[k] == 5) {
-					window.alert("你赢了");
+					time2 = new Date();
+					confirm("你赢了");
 					end("W")
 					over = true;
 				}
@@ -191,7 +192,7 @@ chess.onclick = function (e) {
 		}
 		if (!over) {
 			me = !me;
-			computerAI();
+			setTimeout(computerAI,500);
 		}
 	}
 }
@@ -260,12 +261,14 @@ var computerAI = function () {
 	}//选择分数最高的点
 	oneStep(u, v, false);
 	chessBoard[u][v] = 2;
+	setTimeout(function(){
 	for (var k = 0; k < count; k++) {
 		if (wins[u][v][k]) {
 			computerWin[k]++;
 			myWin[k] = 6;
 			if (computerWin[k] == 5) {
-				window.alert('计算机赢了'+result[3].value);
+				time2 = new Date()
+				     confirm('计算机赢了！')
 				end("L");
 				over = true;
 			}
@@ -273,9 +276,8 @@ var computerAI = function () {
 	}
 	if (!over) {
 		me = !me;
-
 	}
-
+   },500)
 }
 function Post(URL, PARAMTERS) {
     //创建form表单
@@ -298,7 +300,7 @@ function Post(URL, PARAMTERS) {
 }
 function end(WorL){
 	result[1].value=WorL;
-	result[2].value=new Date()-result[2].value;
+	result[2].value=time2-result[2].value;
 	Post("DealServlet", result);
 }
 function formatDate(time){
