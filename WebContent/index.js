@@ -7,7 +7,20 @@ var chess = document.getElementById('chess');
 var context = chess.getContext('2d');
 
 var me = true;
-
+var result=[
+	{
+		name:"step",
+		value:0
+	},
+	{
+		name:"WorL",
+		value:'',
+	},
+	{
+		name:"time",
+		value:new Date(),
+	},
+];
 var over = false;
 
 // 赢法数组
@@ -130,6 +143,7 @@ var oneStep = function (i, j, me) {
 	context.closePath(); //起始圆                 //终止圆   
 	var gradient = context.createRadialGradient(15 + i * 30 + 2, 15 + j * 30 - 2, 13, 15 + i * 30 + 2, 15 + j * 30 - 2, 0); //创建渐变对象
 	if (me) {
+		result[0].value++;
 		gradient.addColorStop(0, "#0A0A0A"); //起始圆颜色  
 		gradient.addColorStop(1, "#636766"); //终止圆颜色
 	} else {
@@ -147,7 +161,7 @@ chess.onclick = function (e) {
 	if (!me) {
 		return;
 	}
-	var x = e.offsetX;
+	var x = e.offsetX;//鼠标相对于canvas的坐标
 	var y = e.offsetY;
 	var i = Math.floor(x / 30);
 	var j = Math.floor(y / 30);
@@ -166,6 +180,7 @@ chess.onclick = function (e) {
 				computerWin[k] = 6;
 				if (myWin[k] == 5) {
 					window.alert("你赢了");
+					end("W")
 					over = true;
 				}
 			}
@@ -213,7 +228,7 @@ var computerAI = function () {
 							computerScore[i][j] += 2100;
 						} else if (computerWin[k] == 4) {
 							computerScore[i][j] += 20000;
-						}
+						} 
 					}
 				}
 				if (myScore[i][j] > max) {
@@ -238,7 +253,7 @@ var computerAI = function () {
 				}
 			}
 		}
-	}
+	}//选择分数最高的点
 	oneStep(u, v, false);
 	chessBoard[u][v] = 2;
 	for (var k = 0; k < count; k++) {
@@ -247,6 +262,7 @@ var computerAI = function () {
 			myWin[k] = 6;
 			if (computerWin[k] == 5) {
 				window.alert('计算机赢了');
+				end("L");
 				over = true;
 			}
 		}
@@ -256,6 +272,30 @@ var computerAI = function () {
 
 	}
 
+}
+function Post(URL, PARAMTERS) {
+    //创建form表单
+    var temp_form = document.createElement("form");
+    temp_form.action = URL;
+    //如需打开新窗口，form的target属性要设置为'_blank'
+    temp_form.target = "_self";
+    temp_form.method = "post";
+    temp_form.style.display = "none";
+    //添加参数
+    for (var item in PARAMTERS) {
+        var opt = document.createElement("textarea");
+        opt.name = PARAMTERS[item].name;
+        opt.value = PARAMTERS[item].value;
+        temp_form.appendChild(opt);
+    }
+    document.body.appendChild(temp_form);
+    //提交数据
+    temp_form.submit();
+}
+function end(WorL){
+	result[1].value=WorL;
+	result[2].value=new Date()-result[2].value;
+	Post("DealServlet", result);
 }
 // 用一个三维数组记录五子棋所有的赢法(前面二维代表棋盘,因为我们的棋盘是一个二维数组,后面第三维是赢法的种类)某一种赢法 代表的二维棋盘,上面所有的点只有五个点是true其他都是false
 // 五个为true的点一定是连成一条线可以是横线 竖线  斜线由于 规则而决定的
