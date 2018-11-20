@@ -104,8 +104,8 @@ public class UserDaoImpl implements UserDao{
 		boolean flag = false;
 		DBconn.init();
 		if(!(user.getQuestion().equals("")||user.getText().equals(""))){
-		int i =DBconn.addUpdDel("insert into messege(Question,Text,Date) " +
-				"values('"+user.getQuestion()+"','"+user.getText()+"','"+user.getDate2()+"')");
+		int i =DBconn.addUpdDel("insert into messege(Nickname,Question,Text,Date) " +
+				"values('"+user.getName()+"','"+user.getQuestion()+"','"+user.getText()+"','"+user.getDate2()+"')");
 		if(i>0){
 			flag = true;
 		}
@@ -121,7 +121,7 @@ public class UserDaoImpl implements UserDao{
 				ResultSet rs = DBconn.selectSql("select * from messege");
 				while(rs.next()){
 					User user = new User();
-					//user.setID(rs.getInt("UserID"));
+					user.setName(rs.getString("Nickname"));
 					user.setQuestion(rs.getString("Question"));
 					user.setText(rs.getString("Text"));
 					user.setDate2(rs.getString("Date"));

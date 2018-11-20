@@ -32,6 +32,7 @@ public class QuestionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String question = request.getParameter("Question"); //获取jsp页面传过来的参数
 		String text = request.getParameter("Text");
+		String name = request.getParameter("Nickname");
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 		System.out.println(df.format(new Date()));
 		String date = df.format(new Date());		
@@ -39,6 +40,7 @@ public class QuestionServlet extends HttpServlet {
 		user.setQuestion(question);
 		user.setText(text);
 		user.setDate2(date);
+		user.setName(name);
 		System.out.println(user.getQuestion().equals(""));
 		UserDao ud = new UserDaoImpl();
 		if(ud.question(user)){

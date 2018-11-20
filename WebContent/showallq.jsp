@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <table class="table" >
   	<thead>
   		<tr class="success">
-  		
+  			<th>留言人</th>
 	  		<th>问题</th>
 	  		<th>问题内容</th>
 	  		<th>留言时间</th>
@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <form action="QuestionServlet" method="post"> 
       <tbody>
        <tr >
-	       
+	       <td><input type="text" style="border:0px" value="${userInfo.getName()}" name="Nickname" readonly></td>
 	       <td><input type="text" style="border:0px" value="${U.getQuestion()}" name="Question" readonly></td>
 	       <td><input type="text" style="border:0px" value="${U.getText()}" name="Text" readonly></td>
 	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="Date" readonly></td>

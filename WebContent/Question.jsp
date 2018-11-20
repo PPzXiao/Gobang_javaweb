@@ -17,7 +17,7 @@
 <div class="smart-green"> 
 <h1>留言</h1>
 <br>
- 请提问(*´・ｖ・) 
+请提问(*´・ｖ・) 
 
 <input type="text" name="Question"/><br> 
 <br>
