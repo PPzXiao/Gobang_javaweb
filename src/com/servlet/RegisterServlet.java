@@ -44,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		if(ud.register(user)){
 			request.setAttribute("NickName", name);  //向request域中放置参数
-			JOptionPane.showMessageDialog(null, "注册成功");; 
+			JOptionPane.showMessageDialog(null, "注册成功"); 
 //			request.setAttribute("message", "注册成功");
 			request.getRequestDispatcher("/login.jsp").forward(request, response);  //转发到登录页面
 		}else{

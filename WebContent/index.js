@@ -20,7 +20,11 @@ var result=[
 		name:"time",
 		value:new Date(),
 	},
-];
+	{
+		name:"date",
+		value:formatDate(new Date().getTime()),
+	},
+]; 
 var over = false;
 
 // 赢法数组
@@ -261,7 +265,7 @@ var computerAI = function () {
 			computerWin[k]++;
 			myWin[k] = 6;
 			if (computerWin[k] == 5) {
-				window.alert('计算机赢了');
+				window.alert('计算机赢了'+result[3].value);
 				end("L");
 				over = true;
 			}
@@ -296,6 +300,23 @@ function end(WorL){
 	result[1].value=WorL;
 	result[2].value=new Date()-result[2].value;
 	Post("DealServlet", result);
+}
+function formatDate(time){
+    var date = new Date(time);
+
+    var year = date.getFullYear(),
+        month = date.getMonth() + 1,//月份是从0开始的
+        day = date.getDate(),
+        hour = date.getHours(),
+        min = date.getMinutes(),
+        sec = date.getSeconds();
+    var newTime = year + '-' +
+                month + '-' +
+                day + ' ' +
+                hour + ':' +
+                min + ':' +
+                sec;
+    return newTime;         
 }
 // 用一个三维数组记录五子棋所有的赢法(前面二维代表棋盘,因为我们的棋盘是一个二维数组,后面第三维是赢法的种类)某一种赢法 代表的二维棋盘,上面所有的点只有五个点是true其他都是false
 // 五个为true的点一定是连成一条线可以是横线 竖线  斜线由于 规则而决定的

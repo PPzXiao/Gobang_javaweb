@@ -17,12 +17,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<!--五子棋-->
+<!--五子棋--> 
 <div class="left">
     <canvas id="chess" width="450px" height="450px"></canvas>
 </div>
 <div class="right">${userInfo.getName()}</div>
-    <script src="index.js"></script>
-</div>
+    <script src="index.js"></script> 
 </body>
 </html>

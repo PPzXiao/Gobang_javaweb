@@ -135,6 +135,17 @@ public class UserDaoImpl implements UserDao{
 
 		return null;
 	}
+	public boolean AddScore(User user) {
+		boolean flag = false;
+		DBconn.init();
+		int i =DBconn.addUpdDel("insert into score(UserID,Time,WorL,Date,Step) " +
+				"values('"+user.getID()+"','"+user.getTime()+"','"+user.getWorL()+"','"+user.getGameDate()+"','"+user.getStep()+"')");
+		if(i>0){
+			flag = true;
+		}
+		DBconn.closeConn();
+		return flag;
+	}
     
 }
 

@@ -12,4 +12,5 @@ public interface UserDao {
 	public boolean update(int UserID,String Nickname, String Password,String RigisterDate, String Email) ;//更新用户信息
 	public boolean question(User user);
 	public List<User> getQuestionAll();
+	public boolean AddScore(User user);
 }
