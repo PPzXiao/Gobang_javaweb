@@ -7,9 +7,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="success.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="success.css">
       
+
       <title>登陆成功</title>
   </head>
   <body> 
@@ -29,17 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</c:if>
   	</div>
   </div>
-  
-  
-  
-  
-	<span>${userInfo.getName()} ${grant}<br></span>
-		<c:if test="${grant==1}"> 
-			<a href="Searchall">查看所有用户</a>
-		</c:if>
-		<a href="SearchallQ">查看所有问题</a>
-		<a href="Question.jsp">留言</a>
-	<a href="demo.jsp">开始游戏</a>
 	<script src="success.js"></script>
   </body>
 </html>
