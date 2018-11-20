@@ -13,9 +13,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <title>登陆成功</title>
   </head>
   <body> 
-  	<div class="top">
+  	<div class="top"> 
+  		<div class="top-img-left" alt="" src="./flower1.png"></div>
+  		<div class="top-img-right" alt="" src="./flower2.png"></div>
   		<div class="top-title">.o GoBang o.</div>
-  	</div>
+  		  	</div>
   <div class="middle">
   	<div class="middle-left"></div>
   	<div class="middle-right">

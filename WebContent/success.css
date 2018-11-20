@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body{
-	background:rgb(245,245,245);
+	background:url(./sky.png);
+	background-size:100% 100%;
 }
 a:hover{
 	text-decoration:none;
@@ -10,6 +11,7 @@ a{
 	color:rgb(245,245,245);
 }
 .top{
+	opacity:0.9;
 	background:rgb(255,255,255);
 	height:43px;
 	width:100%;
@@ -19,6 +21,7 @@ a{
 	transition:all 0.4s;
 }
 .top:hover{
+	opacity:1;
 	box-shadow:0px 3px 15px rgb(133,133,133);
 	transition:all 0.4s;
 }
@@ -27,6 +30,20 @@ a{
 	font-size: 30px;
 	font-family: "STHupo";
 }
+.top-img-left{
+	background:url(./flower1.png);
+	float:left;
+	height:100%;
+	width:120px;
+	background-size:100% 100%; 
+}
+.top-img-right{
+	background:url(./flower2.png);
+	float:right;
+	height:100%;
+	width:120px;
+	background-size:100% 100%;
+}
 .middle{
 	margin-top:25px;
 	min-height:600px;
@@ -34,6 +51,7 @@ a{
 	margin-right:20px;
 	}
 .middle-left{
+	opacity:0.9;
 	background:#fff;
 	float:left;
 	width:60%;
@@ -44,10 +62,12 @@ a{
 	transition:all 0.4s;
 }
 .middle-left:hover{
+	opacity:1;
 	box-shadow:0px 0px 15px rgb(133,133,133);
 	transition:all 0.4s;
 }
 .middle-right{
+	opacity:0.9;
 	background:#fff;
 	float:right;
 	width:30%;
@@ -58,12 +78,13 @@ a{
 	transition:all 0.4s;
 }
 .middle-right:hover{
+	opacity:1;
 	box-shadow:0px 0px 15px rgb(133,133,133);
 	transition:all 0.4s;
 }
 .start-btn{
 	text-align:center;
-	background:#888888;
+	background:#222222;
 	color:rgb(245,245,245);
 	margin:30px 15% 0 15%;
 	box-shadow:0px 4px 6px rgb(167,167,167);
@@ -76,11 +97,12 @@ a{
 }
 .start-btn:hover{
 	box-shadow:0px 2px 4px rgb(167,167,167);
-	background:#666666;
+	background:#444444;
 	text-decoration:none;
 	transition:all 0.4s;
 }
 .btn-title{
+	font-family:"STHupo";
 	position:relative;
 	right:-3px;
 }
