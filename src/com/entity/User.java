@@ -7,9 +7,16 @@ public class User {
     private String Password;
     private String RigisterDate;
     private String Email;
+    
     public String Question;
     public String Text;
     public String Date;
+    
+    private double Time;
+    private String WorL;
+    private int Step;
+    private String GameDate;
+    
     public void setQuestion (String Question) {
 		this.Question = Question;
     }
@@ -65,4 +72,30 @@ public class User {
 	public void setEmail(String Email) {
 		this.Email = Email;
 	}
+	
+	public void setTime (double Time) {
+		this.Time = Time;
+    }
+    
+    public double getTime(){
+    	return Time;
+    }
+    public void setWorL (String WorL) {
+		this.WorL = WorL;
+    }
+    public String getWorL(){
+    	return WorL;
+    }
+    public void setStep (int Step) {
+		this.Step = Step;
+    }
+    public int getStep(){
+    	return Step;
+    }
+    public void setGameDate (String GameDate) {
+		this.GameDate = GameDate;
+    }
+    public String getGameDate(){
+    	return GameDate;
+    }
 }

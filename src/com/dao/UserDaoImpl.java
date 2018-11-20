@@ -31,8 +31,9 @@ public class UserDaoImpl implements UserDao{
 			    DBconn.init();
 				ResultSet rs = DBconn.selectSql("select * from user where Nickname='"+Nickname+"' and Password='"+Password+"'");
 				System.out.println(rs);
-				while(rs.next()){
+				if(rs.next()){
 					System.out.println(111);
+					do {
 					if(rs.getString("Nickname").equals(Nickname) && rs.getString("Password").equals(Password)){
 //						flag = true;
 						user.setID(rs.getInt("UserID"));
@@ -40,9 +41,10 @@ public class UserDaoImpl implements UserDao{
 						user.setPwd(rs.getString("Password"));
 						user.setDate(rs.getString("RegisterDate"));
 						user.setEmail(rs.getString("Email"));
-					}
-					else {user=null;}
+					}	
+					}while(rs.next());
 				}
+				else {user=null;}
 				DBconn.closeConn(); 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -132,6 +134,17 @@ public class UserDaoImpl implements UserDao{
 			}
 
 		return null;
+	}
+	public boolean AddScore(User user) {
+		boolean flag = false;
+		DBconn.init();
+		int i =DBconn.addUpdDel("insert into score(UserID,Time,WorL,Date,Step) " +
+				"values('"+user.getID()+"','"+user.getTime()+"','"+user.getWorL()+"','"+user.getGameDate()+"','"+user.getStep()+"')");
+		if(i>0){
+			flag = true;
+		}
+		DBconn.closeConn();
+		return flag;
 	}
     
 }
