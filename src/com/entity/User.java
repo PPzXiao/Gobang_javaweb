@@ -8,14 +8,16 @@ public class User {
     private String RigisterDate;
     private String Email;
     
-    public String Question;
-    public String Text;
-    public String Date;
+    private String Question;
+    private String Text;
+    private String Date;
     
     private double Time;
     private String WorL;
     private int Step;
     private String GameDate;
+    
+    private int QID;
     
     public void setQuestion (String Question) {
 		this.Question = Question;
@@ -98,4 +100,14 @@ public class User {
     public String getGameDate(){
     	return GameDate;
     }
+    
+    public int getQID() {
+    	return QID;
+    }
+    public void setQID(int QID) {
+    	this.QID = QID;
+    }
+    	
+    
+    
 }

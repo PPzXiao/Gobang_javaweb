@@ -19,7 +19,7 @@
 	            <button type="button" class="btn btn-primary login" onclick="this.form.submit()">注册</button>
 	</form>
 	<div class="top-bottom">
- 		<span>已有账号？</span><a href="login.jsp"> 登陆</a>
+ 		<span>已有账号？</span><a href="login.jsp" style="text-decoration:none"> 登陆</a>
 	</div>
 </div>
 </body>

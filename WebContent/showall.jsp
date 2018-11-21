@@ -58,8 +58,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
 	    
- 		   <button type="button" class="btn btn-default" href="javascript:;" onclick="post(${userStatus.count})">更新</button>
- 	       <a href="DeleteServlet?UserID=${U.getID()}" class="btn btn-default">删除</a>
+ 		   <button type="button" class="btn btn-default" href="javascript:;" style="text-decoration:none" onclick="post(${userStatus.count})">更新</button>
+ 	       <a href="DeleteServlet?UserID=${U.getID()}" style="text-decoration:none" class="btn btn-default">删除</a>
 			</div>
 	       </td>
 	   </tr>

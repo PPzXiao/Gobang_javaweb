@@ -9,36 +9,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>所有问题页面</title>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    <title>所有问题页面</title>
     
+<link rel="stylesheet" type="text/css" href="Question.css">
   </head>
+    <body>
+    
   
-  
+  <div class="container">
+	<div class="row clearfix">
+		<div class="col-xs-12 column">
   <h1>${message}</h1>
-  <table class="table"  width="600" border="1" cellpadding="0" >
+  <table class="table" >
   	<thead>
-  		<tr>
-  		
+  		<tr class="success">
+  		    <th></th>
+  			<th>留言人</th>
 	  		<th>问题</th>
 	  		<th>问题内容</th>
 	  		<th>留言时间</th>
-	  	
+	  	    <th>操作</th>
   		</tr>
   	</thead> 
      <c:forEach var="U" items="${questionAll}" varStatus="userStatus"> 
         <form action="QuestionServlet" method="post"> 
       <tbody>
-       <tr>
-	       
-	       <td><input type="text" value="${U.getQuestion()}" name="Question" readonly></td>
-	       <td><input type="text" value="${U.getText()}" name="Text" readonly></td>
-	       <td><input type="text" value="${U.getDate2()}" name="Date" readonly></td>
-	       
+       <tr >
+           <td><input type="hidden" style="border:0px" value="${U.getQID()}" name="QID" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getName()}" name="Nickname" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getQuestion()}" name="Question" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getText()}" name="Text" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="Date" readonly></td>
+	       <td>
+	       <div class="btn-group" role="group" aria-label="...">
+	         <a href="" style="text-decoration:none" class="btn btn-default">回复</a>
+	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default">删除</a>
+	       </div>
+	       </td>
 	   </tr>
 	   </tbody>
     </form>
-    </c:forEach>  
-    </table>
+    </c:forEach> 
+   
+    </table >
+    <div style="text-align:right"  >
+     <a href="success.jsp" class="btn btn-default" style="text-decoration:none">返回</a> 
+     </div>
+    </div>
+       </div>
+          </div>
   </body>
 </html>

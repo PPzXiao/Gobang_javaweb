@@ -100,12 +100,24 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	
+	public boolean deleteq(int QID) {
+		boolean flag = false;
+		DBconn.init();
+		String sql = "delete from messege where QID="+QID;
+		int i =DBconn.addUpdDel(sql);
+		if(i>0){
+			flag = true;
+		}
+		DBconn.closeConn();
+		return flag;
+	}
+	
 	public boolean question(User user) {
 		boolean flag = false;
 		DBconn.init();
 		if(!(user.getQuestion().equals("")||user.getText().equals(""))){
-		int i =DBconn.addUpdDel("insert into messege(Question,Text,Date) " +
-				"values('"+user.getQuestion()+"','"+user.getText()+"','"+user.getDate2()+"')");
+		int i =DBconn.addUpdDel("insert into messege(QID,Nickname,Question,Text,Date) " +
+				"values('"+user.getQID()+"','"+user.getName()+"','"+user.getQuestion()+"','"+user.getText()+"','"+user.getDate2()+"')");
 		if(i>0){
 			flag = true;
 		}
@@ -121,7 +133,8 @@ public class UserDaoImpl implements UserDao{
 				ResultSet rs = DBconn.selectSql("select * from messege");
 				while(rs.next()){
 					User user = new User();
-					//user.setID(rs.getInt("UserID"));
+					user.setQID(rs.getInt("QID"));
+					user.setName(rs.getString("Nickname"));
 					user.setQuestion(rs.getString("Question"));
 					user.setText(rs.getString("Text"));
 					user.setDate2(rs.getString("Date"));

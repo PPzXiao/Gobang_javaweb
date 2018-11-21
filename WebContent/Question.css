@@ -27,7 +27,7 @@ border-bottom:1px solid #89AF4C;
 }
 .smart-green h1>span {
 display: block;
-font-size: 11px;
+font-size: 16px;
 color: #FFF;
 }
 
@@ -70,6 +70,7 @@ width:100%;
 height:30px;
 }
 .smart-green .button {
+font-size: 16px;
 background-color: #9DC45F;
 border-radius: 5px;
 -webkit-border-radius: 5px;
