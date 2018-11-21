@@ -16,11 +16,16 @@
 		用户： 	<input class="form-control" type="text" name="Nickname"><br><br>
  		密码：     	<input class="form-control" type="password" name="Password"><br><br>
 	            邮箱：    	<input class="form-control" type="text" name="Email"><br><br>
-	            <button type="button" class="btn btn-primary login" onclick="this.form.submit()">注册</button>
+	            <button type="button" class="btn btn-primary login" onclick="this.form.submit();return fun()">注册</button>
 	</form>
 	<div class="top-bottom">
  		<span>已有账号？</span><a href="login.jsp" style="text-decoration:none"> 登陆</a>
 	</div>
 </div>
+<script>
+function fun(){
+		alert("注册成功！")	
+	}
+</script>
 </body>
 </html>

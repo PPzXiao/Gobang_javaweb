@@ -58,8 +58,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
 	    
- 		   <button type="button" class="btn btn-default" href="javascript:;" style="text-decoration:none" onclick="post(${userStatus.count})">更新</button>
- 	       <a href="DeleteServlet?UserID=${U.getID()}" style="text-decoration:none" class="btn btn-default">删除</a>
+ 		   <button type="button" class="btn btn-default" href="javascript:;" style="text-decoration:none" onclick="post(${userStatus.count});return fun()">更新</button>
+ 	       <a href="DeleteServlet?UserID=${U.getID()}" style="text-decoration:none" class="btn btn-default" onclick="return fun2()">删除</a>
 			</div>
 	       </td>
 	   </tr>
@@ -67,8 +67,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form> 
     </c:forEach>  
     </table>
+      <div style="text-align:right"  >
+     <a href="success.jsp" class="btn btn-default" style="text-decoration:none">返回</a> 
+     </div>
     </div>
        </div>
        </div>
+       <script>
+function fun(){
+		alert("更新成功！")	
+	}
+function fun2(){
+	alert("删除成功！")	
+}
+	
+</script>
   </body>
 </html>

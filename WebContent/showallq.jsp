@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <div class="btn-group" role="group" aria-label="...">
 	         <a href="" style="text-decoration:none" class="btn btn-default">回复</a>
 	         <c:if test="${grant==1}">
-	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default">删除</a>
+	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default" onclick="return fun2()">删除</a>
 	       </c:if>
 	       </div>
 	       </td>
@@ -67,5 +67,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
        </div>
           </div>
+          
+                <script>
+function fun(){
+		alert("回复成功！")	
+	}
+function fun2(){
+	alert("删除成功！")	
+}
+	
+</script>
   </body>
 </html>

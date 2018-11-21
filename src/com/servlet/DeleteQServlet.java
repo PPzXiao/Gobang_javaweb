@@ -30,7 +30,7 @@ public class DeleteQServlet extends HttpServlet {
 		int QID = Integer.parseInt(i);
 		System.out.println(QID);
 		if(ud.deleteq(QID)){
-			request.setAttribute("message", "删除成功");
+//			request.setAttribute("message", "删除成功");
 			request.getRequestDispatcher("/SearchallQ").forward(request, response);
 		}else{
 			response.sendRedirect("showallq.jsp");
