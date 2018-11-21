@@ -3,6 +3,12 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  %>
+  <%
+      //解决post/get 请求中文乱码的方法
+      request.setCharacterEncoding("UTF-8");
+      response.setCharacterEncoding("UTF-8");
+   %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>

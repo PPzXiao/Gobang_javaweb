@@ -13,4 +13,5 @@ public interface UserDao {
 	public boolean question(User user);
 	public List<User> getQuestionAll();
 	public boolean AddScore(User user);
+	public boolean deleteq(int QID);
 }
