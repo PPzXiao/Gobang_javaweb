@@ -183,6 +183,7 @@ chess.onclick = function (e) {
 		// 	chessBoard[i][j]=2
 		// }
 		// me=!me;
+		setTimeout(function(){
 		for (var k = 0; k < count; k++) {
 			if (wins[i][j][k]) {
 				myWin[k]++;
@@ -192,13 +193,14 @@ chess.onclick = function (e) {
 					confirm("你赢了");
 					end("W")
 					over = true;
-				}
+				} 
 			}
 		}
 		if (!over) {
 			me = !me;
 			setTimeout(computerAI,500);
 		}
+		},500);
 	}
 }
 
