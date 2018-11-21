@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 		if((user=ud.login(name, pwd)) != null){
 			request.setAttribute("message", "欢迎用户"+name); //向request域中放置信息
 			session.setAttribute("userInfo", user);
-			request.setAttribute("grant", 0);
+			session.setAttribute("grant", 0);
 			request.getRequestDispatcher("/success.jsp").forward(request, response);//转发到成功页面
 		}else{
 			response.sendRedirect("login.jsp"); //重定向到首页

@@ -19,6 +19,35 @@ public class User {
     
     private int QID;
     
+    private int ADID;
+    private String ADname;
+    private String ADpassword;
+    private String ADemail;
+	public int getADID() {
+		return ADID;
+	}
+	public void setADID(int ADID) {
+		this.ADID = ADID;
+	}
+	public String getADName() {
+		return ADname;
+	}
+	public void setADName(String ADname) {
+		this.ADname = ADname;
+	}
+	public String getADPwd() {
+		return ADpassword;
+	}
+	public void setADPwd(String ADpassword) {
+		this.ADpassword = ADpassword;
+	}
+	public String getADEmail() {
+		return ADemail;
+	}
+	public void setADEmail(String ADemail) {
+		this.ADemail = ADemail;
+	}
+	
     public void setQuestion (String Question) {
 		this.Question = Question;
     }
