@@ -51,10 +51,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <tbody>
        <tr>
 	       <td><input type="text" style="border:0px" value="${U.getID()}" name="UserID" readonly></td>
-	       <td><input type="text" value="${U.getName()}" style="border:0px" name="Nickname"></td>
-	       <td><input type="text" value="${U.getPwd()}" name="Password"></td>
+	       <td><input type="text" style="border:0px" value="${U.getName()}" style="border:0px" name="Nickname"></td>
+	       <td><input type="text" style="border:0px" value="${U.getPwd()}" name="Password"></td>
 	       <td><input type="text" style="border:0px" value="${U.getDate()}" name="RegisterDate" readonly></td>
-	       <td><input type="text" value="${U.getEmail()}" name="Email"></td>
+	       <td><input type="text" style="border:0px" value="${U.getEmail()}" name="Email"></td>
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
 	    
