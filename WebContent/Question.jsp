@@ -23,12 +23,16 @@
 <br>
  具体描述一下吧(灬°ω°灬) 
 <textarea rows="5" cols="30" name="Text"></textarea><br><br>
-<button type="button" class="button"  onclick="this.form.submit()">发送</button>
+<button type="button" class="button"  onclick="this.form.submit();return fun()">发送</button>
  
 <a href="success.jsp" class="button" style="text-decoration:none" >返回</a>
-
 </div>
 </form>
 
+<script>
+function fun(){
+		alert("留言成功！")	
+	}
+</script>
 </body>
 </html>
