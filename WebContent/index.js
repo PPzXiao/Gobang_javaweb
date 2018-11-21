@@ -3,7 +3,10 @@
 // 得分最高的点就是计算机需要落子那个点 规则考虑的问题:计算机可以顺利连上五个子以及阻止人连上五个子.
 
 var chess = document.getElementById('chess');
-
+var qizi1 = new Image(); 
+qizi1.src = "./qizi11.png";
+var qizi2 = new Image(); 
+qizi2.src = "./qizi22.png";
 var context = chess.getContext('2d');
 var time2 = '';
 var me = true;
@@ -150,12 +153,14 @@ var oneStep = function (i, j, me) {
 		result[0].value++;
 		gradient.addColorStop(0, "#0A0A0A"); //起始圆颜色  
 		gradient.addColorStop(1, "#636766"); //终止圆颜色
+		context.drawImage(qizi1,3 + i * 30 , 3 + j * 30,24,24);
 	} else {
 		gradient.addColorStop(0, "#D1D1D1");
 		gradient.addColorStop(1, "#F9F9F9");
+		context.drawImage(qizi2,3 + i * 30 , 3 + j * 30,24,24);
 	}
-	context.fillStyle = gradient;
-	context.fill();
+//	context.fillStyle = gradient;
+//	context.fill();
 }
 // 3.落子
 chess.onclick = function (e) {

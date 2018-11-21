@@ -1,9 +1,14 @@
 canvas{
     display: block;
     margin: 50px auto;
-    width:40%;
     height:auto;
     box-shadow: -2px -2px 2px #EFEFEF,5PX 5PX 5PX #B9B9B9;
-    position:fixed;
-    left:150px;
+    text-align:center;
+}
+body{
+	background:url(./star.png);
+}
+.chess{
+	width:450px;
+	margin:0 auto;
 }
