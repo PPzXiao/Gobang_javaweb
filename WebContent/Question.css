@@ -15,11 +15,13 @@ color: #000000;
 border-radius: 5px;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
-transition: box-shadow 0.5s;
+transition: all 0.5s;
    -webkit-transition: box-shadow 0.5s;
 }
 .smart-green:hover{
+	opacity:0.97;
 	 box-shadow:0px 0px 50px orange;
+	 transition:all 0.4s;
 }
 .smart-green h1 {
 font: 40px "Trebuchet MS", Arial, Helvetica, sans-serif;

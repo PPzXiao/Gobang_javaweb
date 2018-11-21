@@ -24,15 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="middle-left"></div>
   	<div class="middle-right">
   		<div class="start-btn"><a href="demo.jsp" style="text-decoration:none"><div class="btn-title">开始游戏</div></a></div>
-  		<div class="start-btn"><a href="SearchallQ" style="text-decoration:none"><div class="btn-title">查看留言</div></a></div>
+  		
 
   		<c:if test="${grant!=1}">
 		<div class="start-btn"><a href="Question.jsp" style="text-decoration:none"><div class="btn-title">留言</div></a></div>
 		</c:if>
-
+        <div class="start-btn"><a href="SearchallQ" style="text-decoration:none"><div class="btn-title">查看留言</div></a></div>
 		<c:if test="${grant==1}">
 		<div class="start-btn"><a href="Searchall"><div class="btn-title" style="text-decoration:none">所有用户</div></a></div>
 		</c:if>
+		<div class="start-btn"><a href="login.jsp" style="text-decoration:none"><div class="btn-title">退出登录</div></a></div>
   	</div>
   </div>
 	<script src="success.js"></script>
