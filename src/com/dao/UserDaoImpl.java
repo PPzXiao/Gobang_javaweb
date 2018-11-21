@@ -159,6 +159,31 @@ public class UserDaoImpl implements UserDao{
 		DBconn.closeConn();
 		return flag;
 	}
+	public User ADlogin(String name, String pwd) {
+//		boolean flag = false;
+		User user = new User();
+		try {
+			    DBconn.init();
+				ResultSet rs = DBconn.selectSql("select * from admin1 where ADname='"+name+"' and ADpassword='"+pwd+"'");
+				System.out.println(rs);
+				if(rs.next()){
+					do {
+					if(rs.getString("ADname").equals(name) && rs.getString("ADpassword").equals(pwd)){
+//						flag = true;
+						user.setADID(rs.getInt("ADID"));
+						user.setADName(rs.getString("ADname"));
+						user.setADPwd(rs.getString("ADpassword"));
+						user.setADEmail(rs.getString("Email"));
+					}
+					}while(rs.next());
+				}
+				else {user=null;}
+				DBconn.closeConn();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
     
 }
 
