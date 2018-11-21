@@ -50,7 +50,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
 	         <a href="" style="text-decoration:none" class="btn btn-default">回复</a>
+	         <c:if test="${grant==1}">
 	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default">删除</a>
+	       </c:if>
 	       </div>
 	       </td>
 	   </tr>
