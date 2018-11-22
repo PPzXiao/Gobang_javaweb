@@ -9,14 +9,13 @@
 <title>登陆</title>
 </head>
 <body>
-<div class="top"> 
+<div id="particles-js">
+<div class="top">  
 	<div class="top-title">.o Gobang o.</div>
 	<div class="top-subtitle">来与ai对战吧！</div>
 	<form class="form1" action="LoginServlet"  method="post" >
 		<input class="form-control" type="text" autocomplete="off" name="Nickname" placeholder="用户名"><br><br>
-		        <p class="tip">请输入用户名</p>
  		<input class="form-control" type="password" autocomplete="off" name="Password" placeholder="密码" ><br><br>
- 		        <p class="tip">请输入密码</p>
  				<div class="reg_suc">${message}</div>
 	         	<button type="button"  class="btn btn-primary login"  onclick="this.form.submit()">登陆</button>
 	</form>
@@ -27,6 +26,9 @@
  	<img class="admin" alt="" src="./pika.png">
  	</a>
 </div>
+</div>
+<script src="particles.min.js"></script>
+<script src="app.js"></script>
    	<script src="./jquery.min.js"></script>
     <script>
         $(function () {

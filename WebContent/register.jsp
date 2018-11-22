@@ -9,6 +9,7 @@
 <title>注册页面</title>
 </head>
 <body>
+<div id="particles-js">
 <div class="top top2"> 
 	<div class="top-title">.o Gobang o.</div>
 	<div class="top-subtitle">来与ai对战吧！</div>
@@ -22,6 +23,9 @@
  		<span>已有账号？</span><a href="login.jsp" style="text-decoration:none"> 登陆</a>
 	</div>
 </div>
+</div>
+<script src="particles.min.js"></script>
+<script src="app.js"></script>
 <script>
 function fun(){
 		alert("注册成功！")	

@@ -9,6 +9,7 @@
 <title>管理员登陆</title>
 </head>
 <body>
+<div id="particles-js">
 <div class="top"> 
 	<div class="top-title">.o Gobang o.</div> 
 	<div class="top-subtitle">管理员登录</div>
@@ -21,5 +22,8 @@
  	<img class="admin" alt="" src="./pika.png">
  	</a>
 </div>
+</div>
+<script src="particles.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
