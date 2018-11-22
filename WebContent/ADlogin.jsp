@@ -11,11 +11,11 @@
 <body>
 <div class="top"> 
 	<div class="top-title">.o Gobang o.</div> 
-	<div class="top-subtitle">来与ai对战吧！</div>
+	<div class="top-subtitle">管理员登录</div>
 	<form class="form1" action="ADloginServlet"  method="post" >
-		管理员用户： 	<input class="form-control" type="text" name="ADname"><br><br>
- 		管理员密码：     	<input class="form-control" type="password" name="ADpassword"><br><br>
-	         		<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
+	<input class="form-control" type="text" name="ADname" placeholder="用户名"><br><br>
+ 	<input class="form-control" type="password" name="ADpassword" placeholder="密码"><br><br>
+	<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
 	</form>
  	<a href="login.jsp">
  	<img class="admin" alt="" src="./pika.png">

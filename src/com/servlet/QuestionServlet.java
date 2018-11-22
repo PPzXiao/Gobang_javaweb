@@ -50,7 +50,7 @@ public class QuestionServlet extends HttpServlet {
 		if(ud.question(user)){
 			request.setAttribute("Question", question);  //向request域中放置参数
 			
-			JOptionPane.showMessageDialog(null, "留言成功");
+			
 		
 			request.getRequestDispatcher("/success.jsp").forward(request, response);  //转发到登录页面
 		}else{

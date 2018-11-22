@@ -6,7 +6,7 @@ canvas{
     text-align:center;
 }
 body{
-	background:url(./star.png);
+	background:url(./star.png) no-repeat fixed;
 }
 .chess{
 	width:450px;

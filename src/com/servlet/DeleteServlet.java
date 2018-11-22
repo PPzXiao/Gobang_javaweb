@@ -30,7 +30,7 @@ public class DeleteServlet extends HttpServlet {
 		int ID = Integer.parseInt(i);
 		System.out.println(ID);
 		if(ud.delete(ID)){
-			request.setAttribute("message", "删除成功");
+	//		request.setAttribute("message", "删除成功");
 			request.getRequestDispatcher("/Searchall").forward(request, response);
 		}else{
 			response.sendRedirect("index.jsp");

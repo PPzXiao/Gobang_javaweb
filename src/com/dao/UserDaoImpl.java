@@ -173,7 +173,7 @@ public class UserDaoImpl implements UserDao{
 						user.setADID(rs.getInt("ADID"));
 						user.setADName(rs.getString("ADname"));
 						user.setADPwd(rs.getString("ADpassword"));
-						user.setADEmail(rs.getString("Email"));
+						user.setADEmail(rs.getString("ADemail"));
 					}
 					}while(rs.next());
 				}

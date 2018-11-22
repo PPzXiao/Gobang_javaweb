@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    <title>所有问题页面</title>
     
-<link rel="stylesheet" type="text/css" href="Question.css">
+
   </head>
     <body>
     
@@ -50,7 +50,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
 	         <a href="" style="text-decoration:none" class="btn btn-default">回复</a>
-	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default">删除</a>
+	         <c:if test="${grant==1}">
+	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default" onclick="return fun2()">删除</a>
+	       </c:if>
 	       </div>
 	       </td>
 	   </tr>
@@ -65,5 +67,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
        </div>
           </div>
+          
+                <script>
+function fun(){
+		alert("回复成功！")	
+	}
+function fun2(){
+	alert("删除成功！")	
+}
+	
+</script>
   </body>
 </html>

@@ -38,7 +38,7 @@ public class UpdateServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		
 		if(ud.update(ID, name, pwd, date, email)){
-			request.setAttribute("message", "更新成功");
+	//		request.setAttribute("message", "更新成功");
 			request.getRequestDispatcher("/Searchall").forward(request, response);
 		}else{
 			response.sendRedirect("index.jsp");
