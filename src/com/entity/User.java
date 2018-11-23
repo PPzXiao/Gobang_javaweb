@@ -17,7 +17,9 @@ public class User {
     private int Step;
     private String GameDate;
     
+    private int RID;
     private int QID;
+    private String Answer;
     
     private int ADID;
     private String ADname;
@@ -136,7 +138,18 @@ public class User {
     public void setQID(int QID) {
     	this.QID = QID;
     }
+    
+    public int getRID() {
+    	return RID;
+    }
+    public void setRID(int RID) {
+    	this.RID = RID;
+    }
     	
-    
-    
+    public void setAnswer (String Answer) {
+		this.Answer = Answer;
+    }
+    public String getAnswer(){
+    	return Answer;
+    }
 }

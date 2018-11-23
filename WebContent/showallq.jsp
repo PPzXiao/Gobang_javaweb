@@ -49,9 +49,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="Date" readonly></td>
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
-	         <a href="" style="text-decoration:none" class="btn btn-default">回复</a>
+	        <c:if test="${grant==0}">
+	         <a href="respond.jsp" style="text-decoration:none" class="btn btn-primary ">回复</a>
+	            </c:if>
+	         <a href="" style="text-decoration:none" class="btn btn-primary ">查看</a>
 	         <c:if test="${grant==1}">
-	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-default" onclick="return fun2()">删除</a>
+	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary" onclick="return fun2()">删除</a>
 	       </c:if>
 	       </div>
 	       </td>
@@ -62,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
     </table >
     <div style="text-align:right"  >
-     <a href="success.jsp" class="btn btn-default" style="text-decoration:none">返回</a> 
+     <a href="success.jsp" class="btn btn-primary btn-lg" style="text-decoration:none">返回</a> 
      </div>
     </div>
        </div>

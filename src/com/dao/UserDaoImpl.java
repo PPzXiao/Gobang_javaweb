@@ -184,6 +184,20 @@ public class UserDaoImpl implements UserDao{
 		}
 		return user;
 	}
+	@Override
+	public boolean respond(User user) {
+		boolean flag = false;
+		DBconn.init();
+		if(!(user.getAnswer().equals(""))){
+		int i =DBconn.addUpdDel("insert into respond(QID,RID,Nickname,Answer,RDate) " +
+				"values('"+user.getQID()+"','"+user.getRID()+"','"+user.getName()+"','"+user.getAnswer()+"','"+user.getDate2()+"')");
+		if(i>0){
+			flag = true;
+		}
+		}
+		DBconn.closeConn();
+		return flag;
+	}
     
 }
 

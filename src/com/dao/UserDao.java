@@ -15,4 +15,6 @@ public interface UserDao {
 	public boolean AddScore(User user);
 	public boolean deleteq(int QID);
 	public User ADlogin(String Nickname,String Password);
+	public boolean respond (User user);
+
 }
