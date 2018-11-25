@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
     <body>
-    
+
   
   <div class="container">
 	<div class="row clearfix">
@@ -30,31 +30,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <table class="table" >
   	<thead>
   		<tr class="success">
+  		   
   		    <th></th>
-  			<th>留言人</th>
-	  		<th>问题</th>
-	  		<th>问题内容</th>
-	  		<th>留言时间</th>
-	  	    <th>操作</th>
+  			<th>回复人</th>
+	  		<th>回复内容</th>
+	  		<th>回复时间</th>
+	  		
   		</tr>
   	</thead> 
-     <c:forEach var="U" items="${questionAll}" varStatus="userStatus"> 
-        <form action="QuestionServlet" method="post"> 
+  	<%
+    int QID =Integer.parseInt(request.getParameter("QID"));   
+        if(QID != 0){
+        session.setAttribute("userInfo2", QID);
+    }
+%>
+ <%System.out.println(QID); %>
+     <c:forEach var="U" items="${replyAll}" varStatus="userStatus"> 
+        <form action="SearchallR" method="post"> 
       <tbody>
        <tr >
-           <td><input type="hidden" style="border:0px" value="${U.getQID()}" name="QID" ></td>
+   
+           <td><input type="hidden" style="border:0px" value="${U.getRID()}" name="RID" ></td>
 	       <td><input type="text" style="border:0px" value="${U.getName()}" name="Nickname" readonly></td>
-	       <td><input type="text" style="border:0px" value="${U.getQuestion()}" name="Question" readonly></td>
-	       <td><input type="text" style="border:0px" value="${U.getText()}" name="Text" readonly></td>
-	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="Date" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getAnswer()}" name="Answer" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="RDate" readonly></td>
 	       <td>
 	       <div class="btn-group" role="group" aria-label="...">
-	        <c:if test="${grant==0}">
-	         <a href="respond.jsp?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">回复</a>
-	            </c:if>
-	         <a href="showallr.jsp?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">查看</a>
 	         <c:if test="${grant==1}">
-	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary" onclick="return fun2()">删除</a>
+	     <%--   <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary" onclick="return fun2()">删除</a> --%>
 	       </c:if>
 	       </div>
 	       </td>
@@ -62,15 +65,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   </tbody>
     </form>
     </c:forEach> 
+     
    
-    </table >
-    <div style="text-align:right"  >
-     <a href="success.jsp" class="btn btn-primary btn-lg" style="text-decoration:none">返回</a> 
-     </div>
     </div>
        </div>
           </div>
-          
+           <div style="text-align:right"  >
+   <%--  <c:if test="${grant==0}">
+	         <a href="respond.jsp?QID=${QID}" style="text-decoration:none" class="btn btn-primary ">回复</a>
+	            </c:if> --%>
+     <a href="SearchallQ" class="btn btn-primary btn-lg" style="text-decoration:none">返回</a> 
+     </div>
                 <script>
 
 function fun2(){

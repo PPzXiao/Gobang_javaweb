@@ -6,45 +6,46 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="Question.css">
+<link rel="stylesheet" type="text/css" href="respond.css">
 
-<title>留言</title>
+<title>回复</title>
 </head>
 
 <body>
 <div id="particles-js">
-<form action="QuestionServlet" method="post">
+<%
+    int QID =Integer.parseInt(request.getParameter("QID"));   
+        if(QID != 0){
+        session.setAttribute("userInfo2", QID);
+    }
+%>
+<form action="RespondServlet" method="post">
 <%@page contentType="text/html; charset=utf-8" %>
-
 <div class="smart-green"> 
-
-<h1>留言</h1>
+<h1>回复</h1>
 <br>
-请提问(*´・ｖ・) 
 
-<input type="text" name="Question"/><br> 
 <br>
- 具体描述一下吧(灬°ω°灬) 
-<textarea rows="5" cols="30" name="Text"></textarea><br><br>
+ 请回答(灬°ω°灬) 
+
+<textarea rows="5" cols="30" name="Answer"></textarea><br><br>
 <br>
   <br>
-  
+<input type = "hidden" name = "QID" value="${QID}">
 <button type="button" class="button"  onclick="this.form.submit();return fun()">发送</button>
  
 <a href="success.jsp" class="button" style="text-decoration:none" >返回</a>
 </div>
-
 </form>
 </div>
-</body>
-
 <script src="particles.min.js"></script>
 <script src="app2.js"></script>
    	<script src="./jquery.min.js"></script>
 <script>
 function fun(){
-		alert("留言成功！")	
+		alert("回复成功！")	
 	}
 </script>
 
+</body>
 </html>
