@@ -12,9 +12,12 @@
 </head>
 
 <body>
+<div id="particles-js">
 <form action="QuestionServlet" method="post">
 <%@page contentType="text/html; charset=utf-8" %>
+
 <div class="smart-green"> 
+
 <h1>留言</h1>
 <br>
 请提问(*´・ｖ・) 
@@ -30,12 +33,18 @@
  
 <a href="success.jsp" class="button" style="text-decoration:none" >返回</a>
 </div>
-</form>
 
+</form>
+</div>
+</body>
+
+<script src="particles.min.js"></script>
+<script src="app2.js"></script>
+   	<script src="./jquery.min.js"></script>
 <script>
 function fun(){
 		alert("留言成功！")	
 	}
 </script>
-</body>
+
 </html>

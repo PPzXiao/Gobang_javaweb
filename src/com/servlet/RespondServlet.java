@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import com.dao.UserDao;
 import com.dao.UserDaoImpl;
 import com.entity.User;
+import com.mysql.cj.Session;
 
 /**
  * Servlet implementation class RespondServlet
@@ -34,15 +35,19 @@ public class RespondServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String answer=request.getParameter("Answer");
 		String name = request.getParameter("Nickname");
+		
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 		System.out.println(df.format(new Date()));
 		String date = df.format(new Date());		
-		String QID = request.getParameter("QID");
+		
 		String RID = request.getParameter("RID");
 		HttpSession session=request.getSession(true);
+		int QID=  (int) session.getAttribute("userInfo2");
 		User user = (User) session.getAttribute("userInfo"); //实例化一个对象，组装属性
 		user.setAnswer(answer);
 		user.setDate2(date);
+	    user.setQID(QID);
+	  
 		System.out.println(user.getAnswer().equals(""));
 		UserDao ud = new UserDaoImpl();
 		

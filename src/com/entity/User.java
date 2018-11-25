@@ -25,6 +25,7 @@ public class User {
     private String ADname;
     private String ADpassword;
     private String ADemail;
+	
 	public int getADID() {
 		return ADID;
 	}

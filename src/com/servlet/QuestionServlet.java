@@ -48,7 +48,7 @@ public class QuestionServlet extends HttpServlet {
 		
 		
 		if(ud.question(user)){
-			request.setAttribute("Question", question);  //向request域中放置参数
+			session.setAttribute("Question", question);  //向request域中放置参数
 			
 			
 		

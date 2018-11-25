@@ -199,5 +199,31 @@ public class UserDaoImpl implements UserDao{
 		return flag;
 	}
     
+
+
+
+@Override
+public List<User> getReplyAll(int QID) {
+	List<User> list = new ArrayList<User>(QID);
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select * from respond where QID='"+QID+"'");
+		System.out.println("DAO"+QID);
+		while(rs.next()){
+			User user = new User();
+		
+			user.setQID(rs.getInt("RID"));
+			user.setName(rs.getString("Nickname"));
+			user.setQuestion(rs.getString("Answer"));
+			user.setDate2(rs.getString("RDate"));
+			list.add(user);
+		}
+		DBconn.closeConn();
+		return list;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
 }
 
+}

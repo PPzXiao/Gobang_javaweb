@@ -12,6 +12,13 @@
 </head>
 
 <body>
+<div id="particles-js">
+<%
+    int QID =Integer.parseInt(request.getParameter("QID"));   
+        if(QID != 0){
+        session.setAttribute("userInfo2", QID);
+    }
+%>
 <form action="RespondServlet" method="post">
 <%@page contentType="text/html; charset=utf-8" %>
 <div class="smart-green"> 
@@ -20,20 +27,25 @@
 
 <br>
  请回答(灬°ω°灬) 
+
 <textarea rows="5" cols="30" name="Answer"></textarea><br><br>
 <br>
   <br>
-  
+<input type = "hidden" name = "QID" value="${QID}">
 <button type="button" class="button"  onclick="this.form.submit();return fun()">发送</button>
  
 <a href="success.jsp" class="button" style="text-decoration:none" >返回</a>
 </div>
 </form>
-
+</div>
+<script src="particles.min.js"></script>
+<script src="app2.js"></script>
+   	<script src="./jquery.min.js"></script>
 <script>
 function fun(){
 		alert("回复成功！")	
 	}
 </script>
+
 </body>
 </html>

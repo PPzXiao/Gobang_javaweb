@@ -16,5 +16,6 @@ public interface UserDao {
 	public boolean deleteq(int QID);
 	public User ADlogin(String Nickname,String Password);
 	public boolean respond (User user);
+	public List<User> getReplyAll(int QID);
 
 }
