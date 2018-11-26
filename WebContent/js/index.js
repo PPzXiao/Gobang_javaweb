@@ -4,9 +4,9 @@
 
 var chess = document.getElementById('chess');
 var qizi1 = new Image(); 
-qizi1.src = "./qizi11.png";
+qizi1.src = "../img/qizi11.png";
 var qizi2 = new Image(); 
-qizi2.src = "./qizi22.png";
+qizi2.src = "../img/qizi22.png";
 var context = chess.getContext('2d');
 var time2 = '';
 var me = true;

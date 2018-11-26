@@ -6,7 +6,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="Question.css">
+<link rel="stylesheet" type="text/css" href="css/Question.css">
 
 <title>留言</title>
 </head>
@@ -38,9 +38,9 @@
 </div>
 </body>
 
-<script src="particles.min.js"></script>
-<script src="app2.js"></script>
-   	<script src="./jquery.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/app2.js"></script>
+   	<script src="js/jquery.min.js"></script>
 <script>
 function fun(){
 		alert("留言成功！")	

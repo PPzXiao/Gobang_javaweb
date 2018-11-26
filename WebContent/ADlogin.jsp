@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <title>管理员登陆</title>
 </head>
 <body>
@@ -19,11 +19,11 @@
 	<button type="button" class="btn btn-primary login" onclick="this.form.submit()">登陆</button>
 	</form>
  	<a href="login.jsp">
- 	<img class="admin" alt="" src="./pika.png">
+ 	<img class="admin" alt="" src="img/pika.png">
  	</a>
 </div>
 </div>
-<script src="particles.min.js"></script>
-<script src="app.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -1,8 +1,10 @@
 package com.entity;
 
+import org.apache.taglibs.standard.lang.jstl.test.beans.PublicInterface2;
+
 public class User {
    
-	private int UserID;
+	private int UserID;//用户相关
     private String Nickname;
     private String Password;
     private String RigisterDate;
@@ -12,7 +14,7 @@ public class User {
     private String Text;
     private String Date;
     
-    private double Time;
+    private double Time;//成绩相关
     private String WorL;
     private int Step;
     private String GameDate;
@@ -21,11 +23,17 @@ public class User {
     private int QID;
     private String Answer;
     
-    private int ADID;
+    private int ADID;//管理员相关
     private String ADname;
     private String ADpassword;
     private String ADemail;
 	
+    private String Rankname;//战绩相关
+    private int SC;
+    private int CountW;
+    private int CountL;
+    private int Myrank;
+    
 	public int getADID() {
 		return ADID;
 	}
@@ -153,4 +161,36 @@ public class User {
     public String getAnswer(){
     	return Answer;
     }
+    
+    public void setRankname(String Rankname) {
+    	this.Rankname=Rankname;
+    }
+    public String getRankname() {
+    	return Rankname;
+    }
+    public void setSC(int SC) {
+    	this.SC = SC;
+    }
+    public int getSC() {
+    	return SC;
+    }
+    public void setCountW(int CountW) {
+    	this.CountW = CountW;
+    }
+    public int getCountW() {
+    	return CountW;
+    }
+    public void setCountL(int CountL) {
+    	this.CountL=CountL;
+    }
+    public int getCountL() {
+    	return CountL;
+    }
+    public void setMyrank(int Myrank) {
+    	this.Myrank=Myrank;
+    }
+    public int getMyrank() {
+    	return Myrank;
+    }
 }
+

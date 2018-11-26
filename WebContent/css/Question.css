@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body{
-	background:url(./miku.png);no-repeat fixed;
+	background:url(../img/miku.png);no-repeat fixed;
 	background-size: 100%;
 }
 .smart-green {

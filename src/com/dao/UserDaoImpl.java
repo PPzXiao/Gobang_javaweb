@@ -226,4 +226,27 @@ public List<User> getReplyAll(int QID) {
 	return null;
 }
 
+public User getAll1(User user) {
+//	boolean flag = false;
+	int id = user.getID();
+	try {
+		    DBconn.init();
+			ResultSet rs = DBconn.selectSql("select * from all1_order where UserID='"+id+"'");
+//			System.out.println(rs);
+			if(rs.next()){
+				System.out.println(111);
+//					flag = true;
+					user.setRankname(rs.getString("Rankname"));
+					user.setSC(rs.getInt("SC"));
+					user.setCountL(rs.getInt("CountL"));
+					user.setCountW(rs.getInt("CountW"));
+					user.setMyrank(rs.getInt("ranking"));
+			}
+			DBconn.closeConn(); 
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return user;
+}
+
 }

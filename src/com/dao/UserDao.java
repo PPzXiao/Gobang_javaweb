@@ -17,5 +17,5 @@ public interface UserDao {
 	public User ADlogin(String Nickname,String Password);
 	public boolean respond (User user);
 	public List<User> getReplyAll(int QID);
-
+	public User getAll1(User user);//获取总战绩信息
 }

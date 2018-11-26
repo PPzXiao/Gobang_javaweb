@@ -6,7 +6,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="respond.css">
+<link rel="stylesheet" type="text/css" href="css/respond.css">
 
 <title>回复</title>
 </head>
@@ -38,9 +38,9 @@
 </div>
 </form>
 </div>
-<script src="particles.min.js"></script>
-<script src="app2.js"></script>
-   	<script src="./jquery.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/app2.js"></script>
+   	<script src="js/jquery.min.js"></script>
 <script>
 function fun(){
 		alert("回复成功！")	

@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="login.css">
-<link rel="stylesheet" type="text/css" href="particles.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/particles.css">
 <title>登陆</title>
 </head>
 <body>
@@ -24,13 +24,13 @@
  		<span>还没有账号？</span><a href="register.jsp" class="" onclick="this.form.submit()" > 注册</a>
  	</div>
  	<a href="ADlogin.jsp">
- 	<img class="admin" alt="" src="./pika.png">
+ 	<img class="admin" alt="" src="img/pika.png">
  	</a>
 </div>
 </div>
-<script src="particles.min.js"></script>
-<script src="app.js"></script>
-   	<script src="./jquery.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+   	<script src="js/jquery.min.js"></script>
     <script>
         $(function () {
             $('input').val('')

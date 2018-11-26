@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		HttpSession session=request.getSession();
 		if((user=ud.login(name, pwd)) != null){
+			user=ud.getAll1(user);
 			request.setAttribute("message", "欢迎用户"+name); //向request域中放置信息
 			session.setAttribute("userInfo", user);
 			session.setAttribute("grant", 0);
