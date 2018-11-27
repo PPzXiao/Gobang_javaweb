@@ -33,6 +33,7 @@ public class User {
     private int CountW;
     private int CountL;
     private int Myrank;
+    private int All1count;
     
 	public int getADID() {
 		return ADID;
@@ -192,5 +193,11 @@ public class User {
     public int getMyrank() {
     	return Myrank;
     }
+    public void setAll1count(int All1count) {
+    	this.All1count=All1count;
+    }
+    public int getAll1count() {
+    	return All1count;
+    }    
 }
 

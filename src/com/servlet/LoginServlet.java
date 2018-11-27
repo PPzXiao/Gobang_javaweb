@@ -2,6 +2,8 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,11 +33,17 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("Password");
 		User user = new User();
 		UserDao ud = new UserDaoImpl();
+		List<User> userAll = ud.getUserAll();
 		HttpSession session=request.getSession();
 		if((user=ud.login(name, pwd)) != null){
 			user=ud.getAll1(user);
+			userAll = ud.getUserAll1(0);
+			int count = ud.getAll1count();
 			request.setAttribute("message", "欢迎用户"+name); //向request域中放置信息
 			session.setAttribute("userInfo", user);
+			session.setAttribute("count", count);
+			session.setAttribute("initpage", 1);
+			session.setAttribute("userRanking", userAll);
 			session.setAttribute("grant", 0);
 			request.getRequestDispatcher("/success.jsp").forward(request, response);//转发到成功页面
 		}else{

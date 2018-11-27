@@ -248,5 +248,41 @@ public User getAll1(User user) {
 	}
 	return user;
 }
+public List<User> getUserAll1(int limit){
+	List<User> list = new ArrayList<User>();
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select * from all1_order limit "+limit+",5");
+		while(rs.next()){
+			User user = new User();
+			user.setMyrank(rs.getInt("ranking"));
+			user.setName(rs.getString("Nickname"));
+			user.setRankname(rs.getString("Rankname"));
+			user.setSC(rs.getInt("SC"));
+			user.setCountW(rs.getInt("CountW"));
+			user.setCountL(rs.getInt("CountL"));
+			list.add(user);
+		}
+		DBconn.closeConn();
+		return list;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
+}
 
+public int getAll1count() {
+	int i=0;
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select count(*) num from all1_order");
+		if(rs.next()){
+			i=rs.getInt("num");
+		}
+		DBconn.closeConn();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return i;	
+}
 }
