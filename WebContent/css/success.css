@@ -2,6 +2,7 @@
 body{
 	background:url(../img/charlotte.jpg);
 	background-size:100% 100%;
+	min-width:1000px;
 }
 a:hover{
 	text-decoration:none;
@@ -31,17 +32,17 @@ a{
 	font-family: "STHupo";
 }
 .top-img-left{
-	background:url(./flower1.png);
+	background:url(../img/flower1.png);
 	float:left;
 	height:100%;
 	width:120px;
 	background-size:100% 100%; 
 }
 .top-img-right{
-	background:url(./flower2.png);
+	background:url(../img/flower2.png);
 	float:right;
 	height:100%;
-	width:120px;
+	width:120px; 
 	background-size:100% 100%;
 }
 .middle{
@@ -51,6 +52,7 @@ a{
 	margin-right:20px;
 	}
 .middle-left{
+	text-align:center;
 	opacity:0.9;
 	background:#fff;
 	float:left;
@@ -60,6 +62,7 @@ a{
 	box-shadow:0px 0px 10px rgb(167,167,167);
 	margin-left:2.5%;
 	transition:all 0.4s;
+	overflow:hidden
 }
 .middle-left:hover{
 	opacity:0.97;
@@ -99,12 +102,132 @@ a{
 	box-shadow:0px 2px 4px rgb(167,167,167);
 	background:#444444;
 	text-decoration:none;
-	 transition-delay: 200ms;
-            transition-duration: 1000ms;
-            transition-timing-function: ease;
+	transition:all 0.4s;
 }
 .btn-title{
 	font-family:"STHupo";
 	position:relative;
 	right:-3px;
+}
+.rankblock{
+	margin:0 auto;
+	width:85%;
+	text-align:center;
+	background:#eeeeee;
+	box-shadow:0px 0px 10px rgb(133,133,133);
+	margin-bottom:10px;
+	border-radius:10px;
+	position:relative;
+	top:-40px;
+}
+.ranktitle{
+	margin:0 auto;
+	width:100%;
+	height:100px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#ffffff));
+	border-radius: 0 0 10px 10px;
+	font-family:"STHupo";
+	color:rgb(245,245,245);
+	letter-spacing:10px;
+	line-height: 60px;
+    font-size: 30px;
+}
+.user{
+	height:120px;
+	text-align:none;
+	border-bottom:solid 0.5px #ddd;
+	position:relative;
+	background:#ffffff;
+	border-radius: 10px 10px 0px 0px;
+}
+.ranktop{
+	margin-bottom:10px;
+}
+.No{
+	position:absolute;
+	display:inline-block;
+	height:100%; 
+	width:20%;
+	text-align:center;
+	font-size:45px;
+	font-weight:700;
+	padding-top:35px;
+	left:1%;
+	margin-right:3%;
+	border-right:solid 0.5px #aaa;
+	font-family:"STHupo";
+}
+.name{
+	display:inline-block;
+	height:100%;
+	width:25%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:20%;
+	padding-top:50px;
+}
+.rank{
+	display:inline-block;
+	height:100%;
+	width:15%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:45%;
+	padding-top:50px;
+}
+.rankname{
+	display:inline-block;
+	height:100%;
+	width:15%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:62%;
+	padding-top:50px;
+}
+.point{
+	display:inline-block;
+	height:100%;
+	width:15%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:80%;
+	padding-top:50px;
+}
+.me{
+	position:absolute;
+	left:5px;
+	top:0px;
+	font-size:30px;
+	font-family:"STHupo";
+	border-radius:50%;
+}
+.pts{
+	font-size:15px;
+}
+.otheruser{
+	height:50px;
+	border-radius: 0px 0px 0px 0px;
+	
+}
+.otheruser div{
+	padding-top:14px;
+	font-size:15px;
+	border-radius: 0px 0px 0px 0px;
+}
+.otheruser:nth-child(odd){
+	background:#ffffff;
+}
+.otheruser:nth-child(even){
+	background:#eeeeee;
+}
+.otheruser .No{
+	font-size:25px;
+	padding-top:10px;
+}
+.boxcontainer{
+	text-align:center;
 }
