@@ -142,28 +142,6 @@ var drawChessBoard = function () {
 	}
 }
 
-//var ox = document.createElement('div');
-//var oy = document.createElement('div');
-//ox.style.width = '100%';
-//ox.style.height = '1px';
-//ox.style.backgroundColor = '#ddd';
-//ox.style.position = 'fixed';
-//ox.style.left = 0;
-//document.body.appendChild(ox);
-//oy.style.height = '100%';
-//oy.style.width = '1px';
-//oy.style.backgroundColor = '#ddd';
-//oy.style.position = 'fixed';
-//oy.style.top = 0;
-//document.body.appendChild(oy);
-//document.onmousemove = function(m){
-//var m = m || event;
-//var x = m.pageX;
-//var y = m.pageY;
-//ox.style.top = y + 'px';
-//oy.style.left = x + 'px';
-//document.getElementById('html'). innerHTML = 'x : ' + x + '<br/>y : ' + y;
-//};
 
 
 

@@ -38,13 +38,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		
   		</tr>
   	</thead> 
-  	<%
+ <%--  	<%
     int QID =Integer.parseInt(request.getParameter("QID"));   
         if(QID != 0){
         session.setAttribute("userInfo2", QID);
     }
 %>
- <%System.out.println(QID); %>
+ <%System.out.println(QID); %> --%>
      <c:forEach var="U" items="${replyAll}" varStatus="userStatus"> 
         <form action="SearchallR" method="post"> 
       <tbody>
@@ -61,21 +61,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       </c:if>
 	       </div>
 	       </td>
+
 	   </tr>
 	   </tbody>
     </form>
     </c:forEach> 
-     
-   
-    </div>
-       </div>
-          </div>
-           <div style="text-align:right"  >
+          <div style="text-align:right"  >
    <%--  <c:if test="${grant==0}">
 	         <a href="respond.jsp?QID=${QID}" style="text-decoration:none" class="btn btn-primary ">回复</a>
 	            </c:if> --%>
      <a href="SearchallQ" class="btn btn-primary btn-lg" style="text-decoration:none">返回</a> 
      </div>
+   
+    </div>
+       </div>
+          </div>
+      
                 <script>
 
 function fun2(){

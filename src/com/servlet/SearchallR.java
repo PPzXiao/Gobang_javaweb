@@ -38,11 +38,10 @@ public class SearchallR extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserDao ud = new UserDaoImpl();
-		HttpSession session=request.getSession(true);
-		int QID=  (int) session.getAttribute("userInfo2");
-		
-		System.out.println("SERVLET");
-		List<User> replyAll = ud.getReplyAll(QID);
+		String QID = (String) request.getParameter("QID");
+		int ID = Integer.parseInt(QID);
+		System.out.println("SERVLET"+ID);
+		List<User> replyAll = ud.getReplyAll(ID);
 		
 		request.setAttribute("replyAll", replyAll);
 		request.getRequestDispatcher("/showallr.jsp").forward(request, response);

@@ -212,9 +212,9 @@ public List<User> getReplyAll(int QID) {
 		while(rs.next()){
 			User user = new User();
 		
-			user.setQID(rs.getInt("RID"));
+			user.setRID(rs.getInt("RID"));
 			user.setName(rs.getString("Nickname"));
-			user.setQuestion(rs.getString("Answer"));
+			user.setAnswer(rs.getString("Answer"));
 			user.setDate2(rs.getString("RDate"));
 			list.add(user);
 		}

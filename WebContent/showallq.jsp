@@ -48,11 +48,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td><input type="text" style="border:0px" value="${U.getText()}" name="Text" readonly></td>
 	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="Date" readonly></td>
 	       <td>
-	       <div class="btn-group" role="group" aria-label="...">
+	       <div class="btn-group" role="group" aria-label="..." >
 	        <c:if test="${grant==0}">
 	         <a href="respond.jsp?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">回复</a>
+	       
 	            </c:if>
-	         <a href="showallr.jsp?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">查看</a>
+	         <a href="SearchallR?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">查看</a>
 	         <c:if test="${grant==1}">
 	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary" onclick="return fun2()">删除</a>
 	       </c:if>
