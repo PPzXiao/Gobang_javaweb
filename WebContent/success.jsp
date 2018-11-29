@@ -18,6 +18,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="top"> 
   		<div class="top-img-left" alt="" src="img/flower1.png"></div>
   		<div class="top-img-right" alt="" src="img/flower2.png"></div>
+  		<div class="userinfo">
+  			<span class="welcome">biu~${userInfo.getName()}</span>
+  			<img class="headimg" alt="" src="img/headimg.png">
+  			<div class="show">
+  				<a href="Modify.jsp"><div>修改信息</div>
+  				<a href="ModifyP.jsp"><div>修改密码</div>
+  				<a href="login.jsp"><div>退出登录</div></a>
+  			</div>
+  		</div>
   		<div class="top-title">.o GoBang o.</div>
   		  	</div>
   <div class="middle">
@@ -54,7 +63,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	</div>
   	<div class="middle-right">
   		<div class="start-btn"><a href="demo.jsp" style="text-decoration:none"><div class="btn-title">开始游戏</div></a></div>
-  		
+  		<c:if test="${grant!=1}">
+		<div class="start-btn"><a href="success.jsp" style="text-decoration:none"><div class="btn-title">排行榜</div></a></div>
+		</c:if>
 
   		<c:if test="${grant!=1}">
 		<div class="start-btn"><a href="Question.jsp" style="text-decoration:none"><div class="btn-title">留言</div></a></div>
@@ -63,8 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<c:if test="${grant==1}">
 		<div class="start-btn"><a href="Searchall"><div class="btn-title" style="text-decoration:none">所有用户</div></a></div>
 		</c:if>
-		<div class="start-btn"><a href="login.jsp" style="text-decoration:none"><div class="btn-title">退出登录</div></a></div>
-  	</div>
+	</div>
   </div>
 	<script src="js/success.js"></script>
 	<script src="js/jquery.min.js"></script>

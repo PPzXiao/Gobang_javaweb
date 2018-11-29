@@ -297,4 +297,16 @@ public boolean modifyM(int UserID,String Email) {
 	DBconn.closeConn();
 	return flag;
 }
+public boolean modifyP(int UserID,String Password) {
+	boolean flag = false;
+	DBconn.init();
+	String sql ="update user set Password ='"+Password
+			+"' where UserID = "+UserID;
+	int i =DBconn.addUpdDel(sql);
+	if(i>0){
+		flag = true;
+	}
+	DBconn.closeConn();
+	return flag;
+}
 }

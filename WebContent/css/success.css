@@ -4,11 +4,24 @@ body{
 	background-size:100% 100%;
 	min-width:1000px;
 }
-a:hover{
+a{
+	color:#000;
+}
+a:link {  
+	text-decoration: none; 
+} 
+a:visited {  
+	text-decoration: none; 
+} 
+a:hover { 
+	color:#000;
+	text-decoration: none; 
+}
+.middle a:hover{
 	text-decoration:none;
 	color:rgb(245,245,245);
 }
-a{
+.middle a{
 	color:rgb(245,245,245);
 }
 .top{
@@ -20,6 +33,8 @@ a{
 	margin-bottom:5px; 
 	border-radius: 0 0 25px 25px;
 	transition:all 0.4s;
+	position:relative;
+	z-index:99;
 }
 .top:hover{
 	opacity:0.96;
@@ -44,6 +59,43 @@ a{
 	height:100%;
 	width:120px; 
 	background-size:100% 100%;
+}
+.userinfo{
+	float:right;
+	margin-right:30px;
+	position:relative;
+}
+.headimg{
+	width:60px;
+}
+.welcome{
+	font-family:"STHupo";
+	font-size:20px;
+}
+.show{
+	position:absolute;
+	width:140px;
+	height:auto;
+	background:#fff;
+	border-radius:5px;
+	text-align:center;
+	visibility:hidden;
+}
+.userinfo:hover{
+	cursor: pointer;
+}
+.userinfo:hover .show{
+	visibility:visible;
+}
+.show div{
+	height:30px;
+	line-height:30px;
+}
+.show div:hover{
+	background:#e0ffff;
+	transition:all 0.4s;
+	cursor: pointer;
+	border-radius:5px;
 }
 .middle{
 	margin-top:25px;
@@ -230,4 +282,19 @@ a{
 }
 .boxcontainer{
 	text-align:center;
+}
+.modify{ 
+	width:70%;
+	margin:0 15%;
+}
+.modify span{
+	font-size:20px;
+}
+.modify input{
+	margin-bottom:10px;
+}
+.modify-title{
+	font-family:"STHupo";
+	font-size:30px;
+	margin:30px;
 }
