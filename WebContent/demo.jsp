@@ -23,6 +23,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="top"> 
   		<div class="top-img-left" alt="" src="img/flower1.png"></div>
   		<div class="top-img-right" alt="" src="img/flower2.png"></div>
+  		<div class="userinfo">
+  			<span class="welcome">biu~${userInfo.getName()}</span>
+  			<img class="headimg" alt="" src="img/headimg.png">
+  			<div class="show">
+  				<a href="Modify.jsp"><div>修改信息</div>
+  				<a href="ModifyP.jsp"><div>修改密码</div>
+  				<a href="login.jsp"><div>退出登录</div></a>
+  			</div>
+  		</div>
   		<div class="top-title">.o GoBang o.</div>
   		  	</div>
   <div class="middle">
