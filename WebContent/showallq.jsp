@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h1>${message}</h1>
   <table class="table" >
   	<thead>
-  		<tr class="success">
+  		<tr class="alert alert-info" role="alert">
   		    <th></th>
   			<th>留言人</th>
 	  		<th>问题</th>
@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <form action="QuestionServlet" method="post"> 
       <tbody>
        <tr >
-           <td><input type="hidden" style="border:0px" value="${U.getQID()}" name="QID" ></td>
+           <td><input type="hidden" style="border:0px" value="${U.getQID()}" name="QID"  ></td>
 	       <td><input type="text" style="border:0px" value="${U.getName()}" name="Nickname" readonly></td>
 	       <td><input type="text" style="border:0px" value="${U.getQuestion()}" name="Question" readonly></td>
 	       <td><input type="text" style="border:0px" value="${U.getText()}" name="Text" readonly></td>
@@ -50,12 +50,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       <td>
 	       <div class="btn-group" role="group" aria-label="..." >
 	        <c:if test="${grant==0}">
-	         <a href="respond.jsp?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">回复</a>
-	       
+	         <a href="respond.jsp?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-info ">回复</a>
 	            </c:if>
-	         <a href="SearchallR?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary ">查看</a>
+	           
+	         <a href="SearchallR?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-info ">查看</a>
+	    
 	         <c:if test="${grant==1}">
-	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-primary" onclick="return fun2()">删除</a>
+	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-info" onclick="return fun2()">删除</a>
 	       </c:if>
 	       </div>
 	       </td>
@@ -66,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
     </table >
     <div style="text-align:right"  >
-     <a href="success.jsp" class="btn btn-primary btn-lg" style="text-decoration:none">返回</a> 
+     <a href="success.jsp" class="btn btn-info btn-lg" style="text-decoration:none">返回</a> 
      </div>
     </div>
        </div>
