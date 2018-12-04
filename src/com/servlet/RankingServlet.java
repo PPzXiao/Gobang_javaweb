@@ -32,6 +32,9 @@ public class RankingServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		int count = Integer.parseInt(request.getParameter("page"));
 		session.setAttribute("initpage", count);
+		User user = (User)session.getAttribute("userInfo");
+		user =ud.getAll1(user);
+		session.setAttribute("userInfo", user);
 		count = (count-1)*5;
 		System.out.println(count);
 		List<User> userAll = ud.getUserAll1(count);

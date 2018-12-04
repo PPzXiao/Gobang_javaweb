@@ -317,7 +317,15 @@ public List<User> getScore(int UserID,int limit) {
 		while(rs.next()){
 			User user = new User();
 			user.setGameDate(rs.getString("Date"));
-			user.setWorL(rs.getString("WorL"));
+			String WorL = rs.getString("WorL");
+			System.out.println(WorL.equals("L")==true);
+			if(WorL.equals("L")==true) {
+				user.setWorL("¸º");
+			}
+			else {
+				user.setWorL("Ê¤");
+			}
+//			user.setWorL(rs.getString("WorL"));
 			user.setStep(rs.getInt("Step"));
 			user.setTime(rs.getDouble("Time"));
 			user.setScore(rs.getInt("Score"));
