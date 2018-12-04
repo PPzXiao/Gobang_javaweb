@@ -21,5 +21,7 @@ public interface UserDao {
 	public List<User> getUserAll1(int limit);//获取每个用户战绩
 	public int getAll1count();//获取战绩总数用于分页功能
 	public boolean modifyM(int UserID,String Email);//修改信息
-	public boolean modifyP(int UseriD,String Pwd);
+	public boolean modifyP(int UserID,String Pwd);
+	public List<User> getScore(int UserID,int limit);
+	public int getScorecount(int UserID);
 }

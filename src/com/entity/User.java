@@ -18,6 +18,8 @@ public class User {
     private String WorL;
     private int Step;
     private String GameDate;
+    private int Score;
+    private int ScoreCount;
     
     private int RID;
     private int QID;
@@ -33,7 +35,7 @@ public class User {
     private int CountW;
     private int CountL;
     private int Myrank;
-    private int All1count;
+    private int All1count; 
     
 	public int getADID() {
 		return ADID;
@@ -140,6 +142,18 @@ public class User {
     }
     public String getGameDate(){
     	return GameDate;
+    }
+    public void setScore (int Score) {
+		this.Score = Score;
+    }
+    public int getScore(){
+    	return Score;
+    }
+    public void setScoreCount (int ScoreCount) {
+		this.ScoreCount = ScoreCount;
+    }
+    public int getScoreCount(){
+    	return ScoreCount;
     }
     
     public int getQID() {

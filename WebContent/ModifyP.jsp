@@ -48,7 +48,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<c:if test="${grant!=1}">
 		<div class="start-btn"><a href="success.jsp" style="text-decoration:none"><div class="btn-title">排行榜</div></a></div>
 		</c:if>
-
+		<c:if test="${grant!=1}">
+		<div class="start-btn"><a href="ScoreServlet?page=1" style="text-decoration:none"><div class="btn-title">战绩</div></a></div>
+		</c:if>
   		<c:if test="${grant!=1}">
 		<div class="start-btn"><a href="Question.jsp" style="text-decoration:none"><div class="btn-title">留言</div></a></div>
 		</c:if>

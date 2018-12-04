@@ -309,4 +309,39 @@ public boolean modifyP(int UserID,String Password) {
 	DBconn.closeConn();
 	return flag;
 }
+public List<User> getScore(int UserID,int limit) {
+	List<User> list = new ArrayList<User>();
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select * from score_point where UserID="+ UserID +" order by Date desc limit "+limit+",5");
+		while(rs.next()){
+			User user = new User();
+			user.setGameDate(rs.getString("Date"));
+			user.setWorL(rs.getString("WorL"));
+			user.setStep(rs.getInt("Step"));
+			user.setTime(rs.getDouble("Time"));
+			user.setScore(rs.getInt("Score"));
+			list.add(user);
+		}
+		DBconn.closeConn();
+		return list;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
+}
+public int getScorecount(int UserID) {
+	int i=0;
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select count(*) num from score_point where UserID ="+UserID);
+		if(rs.next()){
+			i=rs.getInt("num");
+		}
+		DBconn.closeConn();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return i;	
+}
 }
