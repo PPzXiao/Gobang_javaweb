@@ -66,9 +66,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="start-btn"><a href="login.jsp" style="text-decoration:none"><div class="btn-title">退出登录</div></a></div>
   	</div>
   </div>
-	<script src="js/success.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/paging.js"></script>
+	<script src="js/success.js" charset="utf-8"></script>
+	<script src="js/jquery.min.js" charset="utf-8"></script>
+	<script src="js/paging.js" charset="utf-8"></script>
     <script>
     	var count="<%=session.getAttribute("count")%>"; 
         var pages = parseInt((parseInt(count)+4)/5);
