@@ -35,7 +35,7 @@ public class RespondServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String answer=request.getParameter("Answer");
 		String name = request.getParameter("Nickname");
-		
+		System.out.println(name);
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 		System.out.println(df.format(new Date()));
 		String date = df.format(new Date());		

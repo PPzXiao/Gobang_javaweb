@@ -17,62 +17,69 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    <title>所有问题页面</title>
-    <link rel="stylesheet" type="text/css" href="css/liebiao.css"> 
-
+<link rel="stylesheet" type="text/css" href="css/liebiao.css"> 
   </head>
     <body>
-<div class=back>
-  
+    
+    <div class=back>
   <div class="container">
+ 
 	<div class="row clearfix">
 		<div class="col-xs-12 column">
   <h1>${message}</h1>
   <table class="table" >
   	<thead>
-  	<div class="alert alert-info" role="alert">
+  	  	<div class="alert alert-info" role="alert">	
   	<div class="page-header">
-	<c:forEach begin="0" end="0" var="U" items="${replyAll}" varStatus="userStatus"> 
-             <form action="SearchallR" method="post"> 
-           <h1>问题：  ${U.getQuestion()}</h1>
-    
-     </form>
-   </c:forEach>    
-   </div>
-   </div>
+  	<h1>我的留言></h1>
+  	</div>
+  	</div>
   		<tr class="alert alert-info" role="alert">
-  		   
+
   		    <th></th>
-  			<th>回复人</th>
-	  		<th>回复内容</th>
-	  		<th>回复时间</th>
-	  		
+  		
+	  		<th>问题</th>
+	  		<th>问题内容</th>
+	  		<th>留言时间</th>
+	  	    <th>操作</th>
   		</tr>
   	</thead> 
- 
-     <c:forEach var="U" items="${replyAll}" varStatus="userStatus"> 
-        <form action="SearchallR" method="post"> 
+     <c:forEach var="U" items="${myQuestion}" varStatus="userStatus"> 
+        <form action="QuestionServlet" method="post"> 
       <tbody>
        <tr >
-   
-           <td><input type="hidden" style="border:0px" value="${U.getRID()}" name="RID" ></td>
-	       <td><input type="text" style="border:0px" value="${U.getName()}" name="Nickname" readonly></td>
-	       <td><input type="text" style="border:0px" value="${U.getAnswer()}" name="Answer" readonly></td>
-	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="RDate" readonly></td>
-	  
+           <td><input type="hidden" style="border:0px" value="${U.getQID()}" name="QID"  ></td>
+	
+	       <td><input type="text" style="border:0px" value="${U.getQuestion()}" name="Question" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getText()}" name="Text" readonly></td>
+	       <td><input type="text" style="border:0px" value="${U.getDate2()}" name="Date" readonly></td>
+	       <td>
+	       <div class="btn-group" role="group" aria-label="..." >
+	        
+	           
+	         <a href="SearchallR?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-info ">查看回复</a>
+	       <a href="DeleteQServlet?QID=${U.getQID()}" style="text-decoration:none" class="btn btn-info" onclick="return fun2()">删除</a>
+	       
+	       </div>
+	       </td>
 	   </tr>
 	   </tbody>
     </form>
     </c:forEach> 
-    </table>
+   
+    </table >
+    
+   
+
+    
     <div style="text-align:center"  >
-    <a href="SearchmyQ"  class="btn btn-info btn-lg" style="text-decoration:none">我的留言</a> 
-     <a href="SearchallQ"  class="btn btn-info btn-lg" style="text-decoration:none">全部留言</a> 
+     <a href="SearchallQ" class="btn btn-info btn-lg" style="text-decoration:none">全部留言</a> 
       <a href="success.jsp" class="btn btn-info btn-lg" style="text-decoration:none">主菜单</a> 
-    </div>
+     </div>
     </div>
        </div>
           </div>
-      		</div>
+          	</div>
                 <script>
 
 function fun2(){

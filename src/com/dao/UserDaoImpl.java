@@ -309,4 +309,27 @@ public boolean modifyP(int UserID,String Password) {
 	DBconn.closeConn();
 	return flag;
 }
+@Override
+public List<User> getMyQuestion(String Nickname) {
+		List<User> list = new ArrayList<User>();
+    	try {
+		    DBconn.init();
+		    
+			ResultSet rs = DBconn.selectSql("select * from messege where Nickname='"+Nickname+"'");
+			while(rs.next()){
+				User user = new User();
+				user.setQID(rs.getInt("QID"));
+				user.setQuestion(rs.getString("Question"));
+				user.setText(rs.getString("Text"));
+				user.setDate2(rs.getString("Date"));
+				list.add(user);
+			}
+			DBconn.closeConn();
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	return null;
+}
 }

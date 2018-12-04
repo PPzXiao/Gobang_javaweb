@@ -198,6 +198,7 @@ public class User {
     }
     public int getAll1count() {
     	return All1count;
-    }    
+    }
+	
 }
 
