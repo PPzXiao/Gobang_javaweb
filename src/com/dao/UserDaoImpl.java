@@ -207,11 +207,11 @@ public List<User> getReplyAll(int QID) {
 	List<User> list = new ArrayList<User>(QID);
 	try {
 	    DBconn.init();
-		ResultSet rs = DBconn.selectSql("select * from respond where QID='"+QID+"'");
+		ResultSet rs = DBconn.selectSql("select messege.Question,respond.RID,respond.Nickname,respond.Answer,respond.RDate from respond,messege where respond.QID=messege.QID and respond.QID='"+QID+"'");
 		System.out.println("DAO"+QID);
 		while(rs.next()){
 			User user = new User();
-		
+			user.setQuestion(rs.getString("Question"));
 			user.setRID(rs.getInt("RID"));
 			user.setName(rs.getString("Nickname"));
 			user.setAnswer(rs.getString("Answer"));

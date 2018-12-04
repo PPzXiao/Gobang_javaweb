@@ -42,6 +42,7 @@ public class SearchallR extends HttpServlet {
 		int ID = Integer.parseInt(QID);
 		System.out.println("SERVLET"+ID);
 		List<User> replyAll = ud.getReplyAll(ID);
+	
 		
 		request.setAttribute("replyAll", replyAll);
 		request.getRequestDispatcher("/showallr.jsp").forward(request, response);

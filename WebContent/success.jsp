@@ -78,9 +78,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</c:if>
 	</div>
   </div>
-	<script src="js/success.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/paging.js"></script>
+	<script src="js/success.js" charset="utf-8"></script>
+	<script src="js/jquery.min.js" charset="utf-8"></script>
+	<script src="js/paging.js" charset="utf-8"></script>
     <script>
     	var count="<%=session.getAttribute("count")%>"; 
         var pages = parseInt((parseInt(count)+4)/5);
