@@ -31,15 +31,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		  	</div>
   <div class="middle">
   	<div class="middle-left">
-  		<div class="modify">
-  			<form action="ModifyMServlet">
-	  			<div class="modify-title">修改资料</div>
-		  		<input type="hidden" style="" value="${userInfo.getID()}" name="UserID">
-			    <span>用户名</span><input type="text" class="form-control"   autocomplete="off" value="${userInfo.getName()}" name="Nickname" readonly>
-			    <span>邮箱</span><input type="text" class="form-control"  autocomplete="off" value="${userInfo.getEmail()}" name="Email">
-			    <button type="button"  class="btn btn-primary" style="width:100px;margin-top:30px;" onclick="this.form.submit()">提交</button>
-	    	</form>
-	    </div>
+  	<div class="ranktitle">我的战绩</div>
+  <div class="rankblock">
+  		<div class="user otheruser score">
+		  	<div class="No1 notitle">日期</div>
+		  	<div class="name1">
+		  		胜负
+		  	</div>	
+		  	<div class="rank1">步数</div>
+		  	<div class="rankname1">用时</div>
+		  	<div class="point1">积分</div>
+  		</div>
+		<div class="ranking">
+			<c:forEach items="${userScore}" var ="R" varStatus="status">
+			<div class="user otheruser score">
+					<div class="No1">${R.getGameDate()}</div>
+				  	<div class="name1">
+				  		${R.getWorL()}
+				  	</div>	
+				  	<div class="rank1">${R.getStep()}</div>
+				  	<div class="rankname1">${R.getTime() }<span class="pts">s</span></div>
+				  	<div class="point1">${R.getScore() }<span class="pts">pts</span></div>
+				</div>
+			</c:forEach>
+		</div>
+		</div>
+		<div class="boxcontainer">
+			<div class="box" id="box"></div>
+		</div>	
   	</div>
   	<div class="middle-right">
   		<div class="start-btn"><a href="demo.jsp" style="text-decoration:none"><div class="btn-title">开始游戏</div></a></div>
@@ -56,16 +75,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<c:if test="${grant==1}">
 		<div class="start-btn"><a href="Searchall"><div class="btn-title" style="text-decoration:none">所有用户</div></a></div>
 		</c:if>
-  	</div>
+	</div>
   </div>
-  		<script>
-    	var count="<%=request.getAttribute("message")%>"; 
-    	if(count=="1"){
-    		alert("修改成功")
-    	}
-    	else if(count=="0") {alert("修改失败")
-		}
-    	</script>
-		<script src="js/jquery.min.js"></script>
+	<script src="js/success.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/paging.js"></script>
+    <script>
+    	var count1="<%=session.getAttribute("count1")%>"; 
+        var pages = parseInt((parseInt(count1)+4)/5);
+        var initpage="<%=session.getAttribute("initpage")%>";
+        console.log(pages)
+        $('#box').paging({
+            initPageNo:initpage , // 初始页码
+            totalPages: pages, //总页数
+            totalCount: '合计' + count1 + '条数据', // 条目总数
+            slideSpeed: 0, // 缓动速度。单位毫秒
+            jump: true, //是否支持跳转
+            callback: function(page) { // 回调函数
+                console.log(page);
+                var temp_form = document.createElement("form");
+                temp_form.action = "ScoreServlet";
+                //如需打开新窗口，form的target属性要设置为'_blank'
+                temp_form.target = "_self";
+                temp_form.method = "post";
+                temp_form.style.display = "none";
+                //添加参数
+                    var opt = document.createElement("textarea");
+                    opt.name = "page";
+                    opt.value = page;
+                    temp_form.appendChild(opt);
+                document.body.appendChild(temp_form);
+                //提交数据
+                temp_form.submit();
+            }
+        })
+    </script>
   </body>
 </html>

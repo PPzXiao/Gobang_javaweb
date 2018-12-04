@@ -42,7 +42,7 @@ public class DealServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		if(ud.AddScore(user)){
 			session.setAttribute("userInfo", user);
-			request.getRequestDispatcher("/success.jsp").forward(request, response);  //转发到登录页面
+			request.getRequestDispatcher("RankingServlet?page=1").forward(request, response);  //转发到登录页面
 		}else{
 			JOptionPane.showMessageDialog(null, "出错啦"); 
 			response.sendRedirect("success.jsp");//重定向到首页

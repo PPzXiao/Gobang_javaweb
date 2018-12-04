@@ -298,3 +298,70 @@ a:hover {
 	font-size:30px;
 	margin:30px;
 }
+.No1{
+	position:absolute;
+	display:inline-block;
+	height:100%; 
+	width:20%;
+	text-align:center;
+	font-size:45px;
+	font-weight:700;
+	padding-top:35px;
+	left:1%;
+	margin-right:3%;
+	border-right:solid 0.5px #aaa;
+	font-family:"STHupo";
+}
+.name1{
+	display:inline-block;
+	height:100%;
+	width:25%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:20%;
+	padding-top:50px;
+	line-height:40px;
+}
+.rank1{
+	display:inline-block;
+	height:100%;
+	width:15%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:45%;
+	padding-top:50px;
+	line-height:40px;
+}
+.rankname1{
+	display:inline-block;
+	height:100%;
+	width:15%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:62%;
+	padding-top:50px;
+	line-height:40px;
+}
+.point1{
+	display:inline-block;
+	height:100%;
+	width:15%;
+	text-align:center;
+	font-size:25px;
+	position:absolute;
+	left:80%;
+	padding-top:50px;
+	line-height:40px;
+}
+.score{
+	height:65px;
+	border-radius:10px;
+}
+.notitle{
+	font-family:none;
+	line-height:35px;
+	font-weight:400;
+}

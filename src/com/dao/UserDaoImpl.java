@@ -309,6 +309,7 @@ public boolean modifyP(int UserID,String Password) {
 	DBconn.closeConn();
 	return flag;
 }
+
 @Override
 public List<User> getMyQuestion(String Nickname) {
 		List<User> list = new ArrayList<User>();
@@ -332,4 +333,49 @@ public List<User> getMyQuestion(String Nickname) {
 
 	return null;
 }
+
+public List<User> getScore(int UserID,int limit) {
+	List<User> list = new ArrayList<User>();
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select * from score_point where UserID="+ UserID +" order by Date desc limit "+limit+",5");
+		while(rs.next()){
+			User user = new User();
+			user.setGameDate(rs.getString("Date"));
+			String WorL = rs.getString("WorL");
+			System.out.println(WorL.equals("L")==true);
+			if(WorL.equals("L")==true) {
+				user.setWorL("¸º");
+			}
+			else {
+				user.setWorL("Ê¤");
+			}
+//			user.setWorL(rs.getString("WorL"));
+			user.setStep(rs.getInt("Step"));
+			user.setTime(rs.getDouble("Time"));
+			user.setScore(rs.getInt("Score"));
+			list.add(user);
+		}
+		DBconn.closeConn();
+		return list;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
 }
+public int getScorecount(int UserID) {
+	int i=0;
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select count(*) num from score_point where UserID ="+UserID);
+		if(rs.next()){
+			i=rs.getInt("num");
+		}
+		DBconn.closeConn();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return i;	
+}
+}
+

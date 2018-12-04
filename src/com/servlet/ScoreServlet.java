@@ -14,14 +14,14 @@ import com.entity.User;
 import com.dao.UserDaoImpl;
 import com.dao.UserDao;
 
-@WebServlet("/RankingServlet")
-public class RankingServlet extends HttpServlet {
+@WebServlet("/ScoreServlet")
+public class ScoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public RankingServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+//    public RankingServlet() {
+//        super();
+//        // TODO Auto-generated constructor stub
+//    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -31,15 +31,16 @@ public class RankingServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		HttpSession session=request.getSession();
 		int count = Integer.parseInt(request.getParameter("page"));
+		System.out.println(count);
 		session.setAttribute("initpage", count);
-		User user = (User)session.getAttribute("userInfo");
-		user =ud.getAll1(user);
-		session.setAttribute("userInfo", user);
+		User user = (User) session.getAttribute("userInfo");
 		count = (count-1)*5;
 		System.out.println(count);
-		List<User> userAll = ud.getUserAll1(count);
-		session.setAttribute("userRanking", userAll);
-		request.getRequestDispatcher("/success.jsp").forward(request, response);
+		List<User> userAll = ud.getScore(user.getID(),count);
+		session.setAttribute("userScore", userAll);
+		int i = ud.getScorecount(user.getID());
+		session.setAttribute("count1", i);
+		request.getRequestDispatcher("/score.jsp").forward(request, response);
 	}
 
 }
