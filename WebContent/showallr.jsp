@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
     <body>
+     <div id="particles-js">
 <div class=back>
   
   <div class="container">
@@ -66,13 +67,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </table>
     <div style="text-align:center"  >
     <a href="SearchmyQ"  class="btn btn-info btn-lg" style="text-decoration:none">我的留言</a> 
-     <a href="SearchallQ"  class="btn btn-info btn-lg" style="text-decoration:none">全部留言</a> 
+     <a href="SearchallQ?page=1"  class="btn btn-info btn-lg" style="text-decoration:none">全部留言</a> 
       <a href="success.jsp" class="btn btn-info btn-lg" style="text-decoration:none">主菜单</a> 
     </div>
     </div>
        </div>
           </div>
       		</div>
+      		        	</div>
+          	
+    <script src="js/particles.min.js"></script>
+    <script src="js/app3.js"></script>
+   	<script src="js/jquery.min.js"></script>
                 <script>
 
 function fun2(){

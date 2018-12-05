@@ -22,6 +22,7 @@
   cursor: pointer;
   border: 1px solid #ebebeb;
   background-color: #ffffff;
+  text-align: center;
 }
 .box .first-page,
 .box .last-page {
@@ -50,7 +51,7 @@
   float: left;
 }
 .box .pageWrap ul .sel-page {
-  background-color: #444291;
+  background-color: #0abbda;
   color:white;
 }
 .box .jump-text {

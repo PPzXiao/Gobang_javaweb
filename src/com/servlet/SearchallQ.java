@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dao.UserDao;
 import com.dao.UserDaoImpl;
@@ -39,41 +40,18 @@ public class SearchallQ extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 				UserDao ud = new UserDaoImpl();
-				List<User> questionAll = ud.getQuestionAll();
+				HttpSession session=request.getSession();
+				int count = Integer.parseInt(request.getParameter("page"));
+				session.setAttribute("initpage2", count);
+				count = (count-1)*8;
 				
-			        String p = request.getParameter("page");
-			        int page;
-			        try {
-			            //当前页数
-			            page = Integer.valueOf(p);
-			        } catch (NumberFormatException e) {
-			            page = 1;
-			        }
-			        //用户总数
-			        int totalUsers = questionAll.size();
-			        //每页用户数
-			        int usersPerPage = 8;
-			        //总页数
-			        int totalPages = totalUsers % usersPerPage == 0 ? totalUsers / usersPerPage : totalUsers / usersPerPage + 1;
-			        //本页起始用户序号
-			        int beginIndex = (page - 1) * usersPerPage;
-			        //本页末尾用户序号的下一个
-			        int endIndex = beginIndex + usersPerPage;
-			        if (endIndex > totalUsers)
-			            endIndex = totalUsers;
-			        request.setAttribute("totalUsers", totalUsers);
-			        request.setAttribute("usersPerPage", usersPerPage);
-			        request.setAttribute("totalPages", totalPages);
-			        request.setAttribute("beginIndex", beginIndex);
-			        request.setAttribute("endIndex", endIndex);
-			        request.setAttribute("page", page);
-			        request.setAttribute("questionAll", questionAll);
-		            request.getRequestDispatcher("/showallq.jsp").forward(request, response);
+				System.out.println(count);
+				List<User> questionAll = ud.getQuestionAll(count);
+				int j = ud.getQuestioncount();
+				session.setAttribute("count2", j);
+				
+				
+				request.setAttribute("questionAll", questionAll);
+	            request.getRequestDispatcher("/showallq.jsp").forward(request, response);
 	}
-	@Override
-    public void init() throws ServletException {
-		UserDao ud = new UserDaoImpl();
-		List<User> questionAll = ud.getQuestionAll();
-	}
-
 }

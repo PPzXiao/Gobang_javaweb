@@ -1,3 +1,4 @@
+﻿
 (function($, window, document) {
     // 定义构造函数
     function Paging(el, options) {

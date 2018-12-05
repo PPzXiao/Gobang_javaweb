@@ -18,9 +18,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    <title>所有问题页面</title>
 <link rel="stylesheet" type="text/css" href="css/liebiao.css"> 
+<link rel="stylesheet" href="css/paging.css">
   </head>
     <body>
-    
+    <div id="particles-js">
     <div class=back>
   <div class="container">
  
@@ -31,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<thead>
   	  	<div class="alert alert-info" role="alert">	
   	<div class="page-header">
-  	<h1>全部留言         <small><c:set var="totalUsers" value="${requestScope.totalUsers}"/>留言总数:${totalUsers}</small></h1>
+  	<h1>全部留言         <small>留言总数:${count2}</small></h1>
   	</div>
   	</div>
   		<tr class="alert alert-info" role="alert">
@@ -71,51 +72,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form>
     </c:forEach> 
    
+   
     </table >
-    
-    <hr>
-     <c:set var="totalUsers" value="${requestScope.totalUsers}"/>
-    <c:set var="usersPerPage" value="${requestScope.usersPerPage}"/>
-    <c:set var="totalPages" value="${requestScope.totalPages}"/>
-    <c:set var="beginIndex" value="${requestScope.beginIndex}"/>
-    <c:set var="endIndex" value="${requestScope.endIndex}"/>
-    <c:set var="page" value="${requestScope.page}"/>
-    <c:set var="currentPageUsers" value="${requestScope.users.subList(beginIndex,endIndex)}"/>
-    <p>用户总数:${totalUsers}</p>
-    <p>每页用户数:${usersPerPage}</p>
-    <p>总页数:${totalPages}</p>
-    <p>当前页:${page}</p>
-
-    <div class="text-center">
-        <nav>
-            <ul class="pagination">
-                <li><a href="<c:url value="/SearchallQ?page=1"/>">首页</a></li>
-                <li><a href="<c:url value="/SearchallQ?page=${page-1>1?page-1:1}"/>">&laquo;</a></li>
-
-                <c:forEach begin="1" end="${totalPages}" varStatus="loop">
-                    <c:set var="active" value="${loop.index==page?'active':''}"/>
-                    <li class="${active}"><a
-                            href="<c:url value="/SearchallQ?page=${loop.index}"/>">${loop.index}</a>
-                    </li>
-                </c:forEach>
-                <li>
-                    <a href="<c:url value="/SearchallQ?page=${page+1<totalPages?page+1:totalPages}"/>">&raquo;</a>
-                </li>
-                <li><a href="<c:url value="/SearchallQ?page=${totalPages}"/>">尾页</a></li>
-            </ul>
-        </nav>
+   <div style="text-align:center">
+  	    <div  class="box" id="box"></div>
     </div>
-
-    
     <div style="text-align:center"  >
+
      <a href="SearchmyQ" class="btn btn-info btn-lg" style="text-decoration:none">查看我的留言</a> 
      <a href="success.jsp" class="btn btn-info btn-lg" style="text-decoration:none">主菜单</a> 
     
      </div>
+      
     </div>
        </div>
           </div>
           	</div>
+          	</div>
+          	
+    <script src="js/particles.min.js"></script>
+    <script src="js/app3.js"></script>
+   	<script src="js/jquery.min.js"></script>
+    <script src="js/paging.js" charset="utf-8"></script>
+    <script>
+    	var count2="<%=session.getAttribute("count2")%>"; 
+        var pages = parseInt((parseInt(count2)+7)/8);
+        var initpage="<%=session.getAttribute("initpage2")%>";
+        console.log(pages)
+        $('#box').paging({
+            initPageNo:initpage , // 初始页码
+            totalPages: pages, //总页数
+            totalCount: '合计' + count2 + '条数据', // 条目总数
+            slideSpeed: 0, // 缓动速度。单位毫秒
+            jump: true, //是否支持跳转
+            callback: function(page) { // 回调函数
+                console.log(page);
+                var temp_form = document.createElement("form");
+                temp_form.action = "SearchallQ";
+                //如需打开新窗口，form的target属性要设置为'_blank'
+                temp_form.target = "_self";
+                temp_form.method = "post";
+                temp_form.style.display = "none";
+                //添加参数
+                    var opt = document.createElement("textarea");
+                    opt.name = "page";
+                    opt.value = page;
+                    temp_form.appendChild(opt);
+                document.body.appendChild(temp_form);
+                //提交数据
+                temp_form.submit();
+            }
+        })
+    </script>
+    
+    
+    
                 <script>
 
 function fun2(){
@@ -123,5 +134,7 @@ function fun2(){
 }
 	
 </script>
+
+
   </body>
 </html>

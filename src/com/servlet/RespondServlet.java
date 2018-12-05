@@ -54,7 +54,7 @@ public class RespondServlet extends HttpServlet {
 		if(ud.respond(user)){
 			request.setAttribute("Answer", answer);
 			
-			request.getRequestDispatcher("/SearchallQ").forward(request, response);  //转发到登录页面
+			request.getRequestDispatcher("/SearchallQ?page=1").forward(request, response);  //转发到登录页面
 		}else{
 			JOptionPane.showMessageDialog(null, "回复失败"); 
 			response.sendRedirect("respond.jsp");//重定向到首页

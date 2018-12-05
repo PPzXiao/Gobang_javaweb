@@ -41,6 +41,7 @@ public class ModifyPServlet extends HttpServlet {
 				user.setPwd(user0.getPwd());
 				session.setAttribute("userInfo", user);
 				request.setAttribute("message", "1");
+		
 				request.getRequestDispatcher("/ModifyP.jsp").forward(request, response);
 			}
 			else {
