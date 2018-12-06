@@ -76,6 +76,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="start-btn"><a href="SearchallQ?page=1" style="text-decoration:none"><div class="btn-title">查看留言</div></a></div>
 		<c:if test="${grant==1}">
 		<div class="start-btn"><a href="Searchall"><div class="btn-title" style="text-decoration:none">所有用户</div></a></div>
+		<div class="start-btn"><a href="RuleServlet"><div class="btn-title" style="text-decoration:none">更改输赢规则</div></a></div>
+		<div class="start-btn"><a href="RulestServlet"><div class="btn-title" style="text-decoration:none">更改步数规则</div></a></div>
 		</c:if>
 	</div>
   </div>

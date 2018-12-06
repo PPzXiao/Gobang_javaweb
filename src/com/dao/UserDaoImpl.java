@@ -394,5 +394,75 @@ public int getScorecount(int UserID) {
 	}
 	return i;	
 }
+
+public List<User> rules() {
+	List<User> list = new ArrayList<User>();
+	try {
+	    DBconn.init();
+		ResultSet rs = DBconn.selectSql("select * from rules");
+	
+		while(rs.next()){
+			User user = new User();
+			user.setrWorL(rs.getString("WorL"));
+			user.seteach1(rs.getInt("each1"));
+			list.add(user);
+		}
+		DBconn.closeConn();
+		return list;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
+
+}
+
+public List<User> rulest() {
+	List<User> list = new ArrayList<User>();
+	try {
+	    DBconn.init();
+		ResultSet rt = DBconn.selectSql("select * from rulest");
+		while(rt.next()){
+			User user = new User();
+			user.seteachS(rt.getInt("eachS"));
+			user.setStartstep(rt.getInt("Startstep"));
+			user.setEndstep(rt.getInt("Endstep"));
+			list.add(user);
+		}
+		DBconn.closeConn();
+		return list;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
+
+}
+
+public boolean changerules(int each1) {
+	boolean flag = false;
+	DBconn.init();
+	String sql ="update rules set each1 ="+each1;
+	int i =DBconn.addUpdDel(sql);
+	if(i>0){
+		flag = true;
+	}
+	DBconn.closeConn();
+	return flag;
+	
+}
+
+public boolean changerulest( int Startstep, int Endstep, int eachS) {
+	boolean flag = false;
+	DBconn.init();
+	String sql ="update rulest set Startstep ='"+Startstep
+			+"' , Endstep ='"+Endstep
+			+"' , eachS ="+eachS;
+	int i =DBconn.addUpdDel(sql);
+	if(i>0){
+		flag = true;
+	}
+	DBconn.closeConn();
+	return flag;
+	
+}
 }
 

@@ -37,6 +37,15 @@ public class User {
     private int Myrank;
     private int All1count; 
     
+    private String rWorL;//改规则相关
+    private int each1;
+    private int Startstep;
+    private int Endstep;
+    private int eachS;
+    
+ 
+    
+    
 	public int getADID() {
 		return ADID;
 	}
@@ -213,6 +222,38 @@ public class User {
     public int getAll1count() {
     	return All1count;
     }
+    
+    public int geteachS() {
+ 		return eachS;
+ 	}
+ 	public void seteachS(int eachS) {
+ 		this.eachS = eachS;
+ 	}
+     public int getEndstep() {
+   		return Endstep;
+   	}
+   	public void setEndstep(int Endstep) {
+   		this.Endstep = Endstep;
+   	}
+     
+     public int getStartstep() {
+   		return Startstep;
+   	}
+   	public void setStartstep(int Startstep) {
+   		this.Startstep = Startstep;
+   	}
+     public int geteach1() {
+ 		return each1;
+ 	}
+ 	public void seteach1(int each1) {
+ 		this.each1 = each1;
+ 	}
+ 	public String getrWorL() {
+ 		return rWorL;
+ 	}
+ 	public void setrWorL(String rWorL) {
+ 		this.rWorL = rWorL;
+ 	}
 	
 }
 
