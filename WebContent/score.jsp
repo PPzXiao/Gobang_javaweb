@@ -87,8 +87,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         console.log(pages)
 			$(".box").css("width",function(i,curr){
 				console.log(curr);
-				if(pages<5) return 744-50*(5-pages);
-				else return 744;
+				if(pages<5) return 700-50*(5-pages);
+				else return 700;
 			});
         $('#box').paging({
             initPageNo:initpage , // 初始页码
