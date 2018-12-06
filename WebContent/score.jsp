@@ -85,6 +85,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         var pages = parseInt((parseInt(count1)+4)/5);
         var initpage="<%=session.getAttribute("initpage")%>";
         console.log(pages)
+			$(".box").css("width",function(i,curr){
+				console.log(curr);
+				if(pages<5) return 744-50*(5-pages);
+				else return 744;
+			});
         $('#box').paging({
             initPageNo:initpage , // 初始页码
             totalPages: pages, //总页数

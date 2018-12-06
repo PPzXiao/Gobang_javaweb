@@ -282,6 +282,7 @@ a:hover {
 }
 .boxcontainer{
 	text-align:center;
+	margin:0 auto;
 }
 .modify{ 
 	width:70%;

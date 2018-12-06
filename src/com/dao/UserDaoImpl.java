@@ -184,7 +184,6 @@ public class UserDaoImpl implements UserDao{
 		}
 		return user;
 	}
-	@Override
 	public boolean respond(User user) {
 		boolean flag = false;
 		DBconn.init();
@@ -202,7 +201,6 @@ public class UserDaoImpl implements UserDao{
 
 
 
-@Override
 public List<User> getReplyAll(int QID) {
 	List<User> list = new ArrayList<User>(QID);
 	try {
@@ -275,7 +273,7 @@ public int getAll1count() {
 	int i=0;
 	try {
 	    DBconn.init();
-		ResultSet rs = DBconn.selectSql("select count(*) num from all1_order");
+		ResultSet rs = DBconn.selectSql("call all1_count");
 		if(rs.next()){
 			i=rs.getInt("num");
 		}
@@ -310,7 +308,6 @@ public boolean modifyP(int UserID,String Password) {
 	return flag;
 }
 
-@Override
 public List<User> getMyQuestion(String Nickname) {
 		List<User> list = new ArrayList<User>();
     	try {
