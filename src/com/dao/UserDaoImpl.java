@@ -423,6 +423,7 @@ public List<User> rulest() {
 		ResultSet rt = DBconn.selectSql("select * from rulest");
 		while(rt.next()){
 			User user = new User();
+			user.setPID(rt.getInt("PID"));
 			user.seteachS(rt.getInt("eachS"));
 			user.setStartstep(rt.getInt("Startstep"));
 			user.setEndstep(rt.getInt("Endstep"));
@@ -437,10 +438,11 @@ public List<User> rulest() {
 
 }
 
-public boolean changerules(int each1) {
+public boolean changerules(int each1,String WorL) {
 	boolean flag = false;
 	DBconn.init();
-	String sql ="update rules set each1 ="+each1;
+	String sql ="update rules set each1 ='"+each1
+			+"'where WorL='"+WorL+"'";
 	int i =DBconn.addUpdDel(sql);
 	if(i>0){
 		flag = true;
@@ -450,12 +452,13 @@ public boolean changerules(int each1) {
 	
 }
 
-public boolean changerulest( int Startstep, int Endstep, int eachS) {
+public boolean changerulest(int PID, int Startstep, int Endstep, int eachS) {
 	boolean flag = false;
 	DBconn.init();
 	String sql ="update rulest set Startstep ='"+Startstep
 			+"' , Endstep ='"+Endstep
-			+"' , eachS ="+eachS;
+			+"' , eachS ='"+eachS
+			+"'where PID = "+PID;
 	int i =DBconn.addUpdDel(sql);
 	if(i>0){
 		flag = true;

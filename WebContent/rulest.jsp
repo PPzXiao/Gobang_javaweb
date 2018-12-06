@@ -38,6 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h1>步数规则</h1>
     <thead>
   		<tr class="success">
+  		    <th></th>
   			<th>起始步数</th>
 	  		<th>终止步数</th>
 	  		<th>分数</th>
@@ -48,6 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <form action="UpdatestServlet" method="post"> 
       <tbody>
        <tr>
+           <td><input type="hidden" style="border:0px" value="${V.getPID()}" name="PID" readonly></td>
 	       <td><input type="text" style="border:0px" value="${V.getStartstep()}" name="Startstep" ></td>
 	       <td><input type="text" style="border:0px" value="${V.getEndstep()}" style="border:0px" name="Endstep"></td>
 	        <td><input type="text" style="border:0px" value="${V.geteachS()}" style="border:0px" name="eachS"></td>

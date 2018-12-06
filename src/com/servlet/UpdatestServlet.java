@@ -23,7 +23,8 @@ public class UpdatestServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		String i = request.getParameter("PID");
+		int PID = Integer.parseInt(i);
 		String b = request.getParameter("Startstep");
 		int Startstep = Integer.parseInt(b);
 		String c = request.getParameter("Endstep");
@@ -33,7 +34,7 @@ public class UpdatestServlet extends HttpServlet {
 
 		UserDao ud = new UserDaoImpl();
 		
-		if(ud.changerulest(Startstep, Endstep, eachS)){
+		if(ud.changerulest(PID,Startstep, Endstep, eachS)){
 	System.out.println("´ó³É¹¦");
 			request.getRequestDispatcher("/RulestServlet").forward(request, response);
 		}else{

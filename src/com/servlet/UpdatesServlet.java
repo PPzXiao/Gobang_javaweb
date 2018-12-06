@@ -24,10 +24,11 @@ public class UpdatesServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String a = request.getParameter("each1");
 		int each1 = Integer.parseInt(a);
+		String rWorL = request.getParameter("rWorL");
 		
 		UserDao ud = new UserDaoImpl();
 		
-		if(ud.changerules(each1)){
+		if(ud.changerules(each1,rWorL)){
 			System.out.println("³É¹¦");
 	
 			request.getRequestDispatcher("/RuleServlet").forward(request, response);

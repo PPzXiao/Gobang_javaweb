@@ -21,7 +21,7 @@ public class User {
     private int Score;
     private int ScoreCount;
     
-    private int RID;
+    private int RID;//¡Ù—‘œ‡πÿ
     private int QID;
     private String Answer;
     
@@ -42,7 +42,7 @@ public class User {
     private int Startstep;
     private int Endstep;
     private int eachS;
-    
+    private int PID;
  
     
     
@@ -254,6 +254,12 @@ public class User {
  	public void setrWorL(String rWorL) {
  		this.rWorL = rWorL;
  	}
+ 	public int getPID() {
+		return PID;
+	}
+	public void setPID(int PID) {
+		this.PID = PID;
+	}
 	
 }
 

@@ -28,7 +28,7 @@ public interface UserDao {
 	public int getScorecount(int UserID);
 	public  List<User> rules();
 	public  List<User> rulest();
-	public boolean changerules(int each1);
-	public boolean changerulest(int Startstep,int Endstep,int eachS);
+	public boolean changerules(int each1,String WorL);
+	public boolean changerulest(int PID,int Startstep,int Endstep,int eachS);
 
 }
