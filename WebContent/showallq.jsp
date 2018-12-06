@@ -32,7 +32,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<thead>
   	  	<div class="alert alert-info" role="alert">	
   	<div class="page-header">
-  	<h1>全部留言         <small>留言总数:${count2}</small></h1>
+  	<h1>全部留言         <small>留言总数:${count2}  
+  	<a href="SearchmyQ" class="btn btn-info " style="text-decoration:none">查看我的留言</a>  
+  	<a href="success.jsp" class="btn btn-info " style="text-decoration:none">主菜单
+  	</a> </small></h1>
+  	
+    
+    
   	</div>
   	</div>
   		<tr class="alert alert-info" role="alert">
@@ -77,13 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div style="text-align:center">
   	    <div  class="box" id="box"></div>
     </div>
-    <div style="text-align:center"  >
-
-     <a href="SearchmyQ" class="btn btn-info btn-lg" style="text-decoration:none">查看我的留言</a> 
-     <a href="success.jsp" class="btn btn-info btn-lg" style="text-decoration:none">主菜单</a> 
-    
-     </div>
-      
+  
     </div>
        </div>
           </div>
@@ -99,6 +99,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         var pages = parseInt((parseInt(count2)+7)/8);
         var initpage="<%=session.getAttribute("initpage2")%>";
         console.log(pages)
+        $(".box").css("width",function(i,curr){
+				console.log(curr);
+				if(pages<5) return 700-50*(5-pages);
+				else return 700;
+		});
         $('#box').paging({
             initPageNo:initpage , // 初始页码
             totalPages: pages, //总页数

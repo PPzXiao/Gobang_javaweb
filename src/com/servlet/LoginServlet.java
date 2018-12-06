@@ -42,6 +42,7 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("message", "欢迎用户"+name); //向request域中放置信息
 			session.setAttribute("userInfo", user);
 			session.setAttribute("count", count);
+			System.out.println("login"+count);
 			session.setAttribute("initpage", 1);
 			session.setAttribute("userRanking", userAll);
 			session.setAttribute("grant", 0);

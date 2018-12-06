@@ -36,7 +36,7 @@ public class RankingServlet extends HttpServlet {
 		user =ud.getAll1(user);
 		session.setAttribute("userInfo", user);
 		count = (count-1)*5;
-		System.out.println(count);
+		System.out.println("servlet"+count);
 		List<User> userAll = ud.getUserAll1(count);
 		session.setAttribute("userRanking", userAll);
 		request.getRequestDispatcher("/success.jsp").forward(request, response);

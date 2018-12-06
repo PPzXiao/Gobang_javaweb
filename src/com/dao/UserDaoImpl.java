@@ -225,7 +225,7 @@ public List<User> getReplyAll(int QID) {
 	List<User> list = new ArrayList<User>(QID);
 	try {
 	    DBconn.init();
-		ResultSet rs = DBconn.selectSql("select messege.Question,respond.RID,respond.Nickname,respond.Answer,respond.RDate from respond,messege where respond.QID=messege.QID and respond.QID='"+QID+"'");
+		ResultSet rs = DBconn.selectSql("select messege.Question,respond.RID,respond.Nickname,respond.Answer,respond.RDate from respond,messege where respond.QID=messege.QID and respond.QID='"+QID+"'ORDER BY RDate DESC");
 		System.out.println("DAO"+QID);
 		while(rs.next()){
 			User user = new User();
@@ -333,7 +333,7 @@ public List<User> getMyQuestion(String Nickname) {
     	try {
 		    DBconn.init();
 		    
-			ResultSet rs = DBconn.selectSql("select * from messege where Nickname='"+Nickname+"'");
+			ResultSet rs = DBconn.selectSql("select * from messege where Nickname='"+Nickname+"'ORDER BY Date DESC");
 			while(rs.next()){
 				User user = new User();
 				user.setQID(rs.getInt("QID"));

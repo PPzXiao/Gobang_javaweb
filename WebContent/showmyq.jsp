@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<thead>
   	  	<div class="alert alert-info" role="alert">	
   	<div class="page-header">
-  	<h1>我的留言></h1>
+  	<h1>我的留言</h1>
   	</div>
   	</div>
   		<tr class="alert alert-info" role="alert">
@@ -68,10 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </c:forEach> 
    
     </table >
-    
-   
-
-    
+ 
     <div style="text-align:center"  >
      <a href="SearchallQ?page=1" class="btn btn-info btn-lg" style="text-decoration:none">全部留言</a> 
       <a href="success.jsp" class="btn btn-info btn-lg" style="text-decoration:none">主菜单</a> 
