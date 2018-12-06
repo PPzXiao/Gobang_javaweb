@@ -126,11 +126,11 @@ public class UserDaoImpl implements UserDao{
 		return flag;
 	}
 	
-	public List<User> getQuestionAll() {
+	public List<User> getQuestionAll(int limit) {
 			List<User> list = new ArrayList<User>();
 	    	try {
 			    DBconn.init();
-				ResultSet rs = DBconn.selectSql("select * from messege");
+				ResultSet rs = DBconn.selectSql("select * from question limit "+limit+",8");
 				while(rs.next()){
 					User user = new User();
 					user.setQID(rs.getInt("QID"));
@@ -148,6 +148,26 @@ public class UserDaoImpl implements UserDao{
 
 		return null;
 	}
+	
+	public int getQuestioncount() {
+		int j=0;
+		try {
+		    DBconn.init();
+			ResultSet rs = DBconn.selectSql("select count(*) numq from messege ");
+			if(rs.next()){
+				j=rs.getInt("numq");
+			}
+			DBconn.closeConn();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return j;	
+	}
+	
+	
+	
+	
+	
 	public boolean AddScore(User user) {
 		boolean flag = false;
 		DBconn.init();

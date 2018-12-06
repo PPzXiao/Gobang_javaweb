@@ -11,7 +11,8 @@ public interface UserDao {
 	public boolean delete(int UserID) ;//根据id删除用户
 	public boolean update(int UserID,String Nickname, String Password,String RigisterDate, String Email) ;//更新用户信息
 	public boolean question(User user);
-	public List<User> getQuestionAll();
+	public List<User> getQuestionAll(int limit);
+	public int getQuestioncount();
 	public List<User> getMyQuestion(String Nickname);
 	public boolean AddScore(User user);
 	public boolean deleteq(int QID);

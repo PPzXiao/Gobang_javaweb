@@ -34,7 +34,7 @@
 <input type = "hidden" name = "QID" value="${QID}">
 <button type="button" class="button"  onclick="this.form.submit();return fun()">发送</button>
  
-<a href="SearchallQ" class="button" style="text-decoration:none" >返回</a>
+<a href="SearchallQ?page=1" class="button" style="text-decoration:none" >返回</a>
 </div>
 </form>
 </div>

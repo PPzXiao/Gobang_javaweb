@@ -31,7 +31,7 @@ public class DeleteQServlet extends HttpServlet {
 		System.out.println(QID);
 		if(ud.deleteq(QID)){
 //			request.setAttribute("message", "É¾³ý³É¹¦");
-			request.getRequestDispatcher("/SearchallQ").forward(request, response);
+			request.getRequestDispatcher("/SearchallQ?page=1").forward(request, response);
 		}else{
 			response.sendRedirect("showallq.jsp");
 		}
