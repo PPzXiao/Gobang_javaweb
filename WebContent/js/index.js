@@ -282,7 +282,7 @@ var computerAI = function () {
 			myWin[k] = 6;
 			if (computerWin[k] == 5) {
 				time2 = new Date()
-				     confirm('计算机赢了！')
+				     confirm('ai赢了！')
 				end("L");
 				over = true;
 			}
