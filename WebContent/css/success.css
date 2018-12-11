@@ -110,9 +110,10 @@ a:hover {
 	float:left;
 	width:60%;
 	min-height:550px;
+	min-width:700px;
 	border-radius: 10px;
 	box-shadow:0px 0px 10px rgb(167,167,167);
-	margin-left:2.5%;
+	margin-left:0.5%;
 	transition:all 0.4s;
 	overflow:hidden
 }
